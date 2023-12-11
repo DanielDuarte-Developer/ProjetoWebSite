@@ -1,30 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="css/loginCSS.css">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form method="post">
-                <label>Username</label>
-				<input type="text" name="username" required> <br> <br>
-			
-				<label>Password</label>
-				<input type="password" name="password" required><br><br>
-				
-				<input type="submit" value="Login" class="btn">
-    </form>
-    <h2>Caso nao tenha conta registe-se já abaixo</h2>
-    <h3><a href="register.php">Register</a></h3>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form method="post">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="name" placeholder="Name" required="">
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form method="post">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Login</button>
+				</form>	
+			</div>
+	</div>
 </body>
 </html>
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         include 'model/acessoBaseDados.php';
-        $usernameInserted = $_POST['username'];
-        $passwordInserted = $_POST['password'];
-
-        $user = verifyUser($usernameInserted,$passwordInserted);
-
+        $emailInserted = $_POST['email'];
+        $passwordInserted = $_POST['pswd'];
+       
+        if($_POST['btnLogin']){
+            $user = verifyUser($emailInserted ,$passwordInserted);
+        }else{
+			$name = $_POST['name'];
+			registerNewUser($emailInserted , $name, $passwordInserted);
+		}
     }
 ?>
