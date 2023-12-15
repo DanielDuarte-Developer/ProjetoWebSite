@@ -1,14 +1,66 @@
 
-<div class="Menu">
-       <nav>
-            <!--TODO Meter Src Para um logo-->
-            <!--<img src="" class="logo">-->
-            <ul class="menuItems">
-                 <!--TODO Mudar o Menu-->
-                 <li><a href='HomePage.php' data-item='Homepage'> Home </a></li>
-                 <li><a href='AboutUs.html' data-item='About-us'> About us </a></li>
-                 <li><a href='Produtos.php' data-item='Products'> Products </a></li>
-                 <li><a href='Contact.html' data-item='Contact'> Contact</a></li>
-            </ul>
-      </nav>
-</div>
+<link rel="stylesheet" href="css/menuCSS.css">
+<nav id="navbar">
+     <ul class="navbar-items flexbox-col">
+       <li class="navbar-logo flexbox-left">
+         <a class="navbar-item-inner flexbox">
+           <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 1438.88 1819.54">
+             <polygon points="925.79 318.48 830.56 0 183.51 1384.12 510.41 1178.46 925.79 318.48"/>
+             <polygon points="1438.88 1663.28 1126.35 948.08 111.98 1586.26 0 1819.54 1020.91 1250.57 1123.78 1471.02 783.64 1663.28 1438.88 1663.28"/>
+           </svg>
+         </a>
+       </li>
+       <!--
+       <li class="navbar-item flexbox-left">
+         <a class="navbar-item-inner flexbox-left" href="">
+           <div class="navbar-item-inner-icon-wrapper flexbox">
+             <ion-icon name="search-outline"></ion-icon>
+           </div>
+           <span class="link-text">Search</span>
+         </a>
+       </li>
+       -->
+       <li class="navbar-item flexbox-left" >
+         <a class="navbar-item-inner flexbox-left" href="HomePage.php">
+           <div class="navbar-item-inner-icon-wrapper flexbox">
+             <ion-icon name="home-outline"></ion-icon>
+           </div>
+           <span class="link-text">Home</span>
+         </a>
+       </li>
+       <li class="navbar-item flexbox-left" >
+         <a class="navbar-item-inner flexbox-left" href="Produtos.php">
+           <div class="navbar-item-inner-icon-wrapper flexbox">
+             <ion-icon name="folder-open-outline"></ion-icon>
+           </div>
+           <span class="link-text">Products</span>
+         </a>
+       </li>
+       <li class="navbar-item flexbox-left" >
+         <a class="navbar-item-inner flexbox-left" href="AboutUs.html">
+           <div class="navbar-item-inner-icon-wrapper flexbox">
+             <ion-icon name="pie-chart-outline"></ion-icon>
+           </div>
+           <span class="link-text">About Us</span>
+         </a>
+       </li>
+       <li class="navbar-item flexbox-left" >
+         <a class="navbar-item-inner flexbox-left" href="Contact.html">
+           <div class="navbar-item-inner-icon-wrapper flexbox">
+             <ion-icon name="people-outline"></ion-icon>
+           </div>
+           <span class="link-text">Contacts</span>
+         </a>
+       </li>
+       <!--
+       <li class="navbar-item flexbox-left" href="">
+         <a class="navbar-item-inner flexbox-left">
+           <div class="navbar-item-inner-icon-wrapper flexbox">
+             <ion-icon name="settings-outline"></ion-icon>
+           </div>
+           <span class="link-text">Settings</span>
+         </a>
+       </li>
+       -->
+     </ul>
+   </nav>

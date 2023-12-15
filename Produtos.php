@@ -25,8 +25,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/homePage.css">
-    <link rel="stylesheet" href="css/ProdutosCSS.css">
+    <!--<link rel="stylesheet" href="css/homePage.css">-->
+    <link rel="stylesheet" href="css/produtosCSS.css">
     <title>Produtos</title>
 </head>
 <body>
@@ -60,51 +60,6 @@
 
            
         ?>
-        
-       <!--
-        <section class="row">
-           
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
-
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
-
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
-
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
-
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
-        </section>
-        -->
     </main>
 
     <footer>
