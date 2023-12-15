@@ -1,5 +1,4 @@
 <?php
-    //session_start();
         $productsMenu = [
             'prod01' => ['name' => 'camisa', 'value' => 100],
             'prod02' => ['name' => 'calça', 'value' => 200],
@@ -27,45 +26,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/homePage.css">
-    <link rel="stylesheet" href="css/productsCSS.css">
+    <link rel="stylesheet" href="css/ProdutosCSS.css">
     <title>Produtos</title>
 </head>
 <body>
     <header>
-        <div class="Menu">
-            <nav>
-                <!--TODO Meter Src Para um logo-->
-                <!--<img src="" class="logo">-->
-                <ul class="menuItems">
-                    <!--TODO Mudar o Menu-->
-                    <li><a href='HomePage.php' data-item='Homepage'> Home </a></li>
-                    <li><a href='' data-item='About-us'> About us </a></li>
-                    <li><a href='Produtos.php' data-item='Products'> Products </a></li>
-                    <li><a href='' data-item='Contact'> Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <?php
+            include "View/Menu.html";
+        ?>
     </header>
 
     <main>
         <?php
+           
             include "model/acessoBaseDados.php";
             $produtos = getProdutos();
 
-            echo " <section class='row'>";
+            echo " <div class='container'>";
             foreach($produtos as $produto){
                 echo "<div class = 'card'>
                         <img src='{$produto['url']}' alt=' ' style='width:100%'>
-                        <h1><a href='Produto.php?id={$produto['Id_Produto']}&linkText=Click%20me'>{$produto['nome']}</a></h1>
-                        <p class='price'>{$produto['preco']} €</p>
-                        <p>{$produto['descricao_curta']}</p>
-                        <p><button>Add to Cart</button></p>
+                        <div class='card-content'>
+                            <h2><a href='Produto.php?id={$produto['Id_Produto']}&linkText=Click%20me'>{$produto['nome']}</a></h2>
+                            <p class='price'>{$produto['preco']} €</p>
+                            <p class='description'>{$produto['descricao_curta']}</p>
+                            <button class='add-to-cart'>Add to Cart</button>
+                        </div>
                     </div>
                 ";
             }
-            echo "</section>";
+            
+            echo "</div>";
+
+           
         ?>
-        <!--
+        
+       <!--
         <section class="row">
            
                 <div class="card">

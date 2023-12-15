@@ -68,15 +68,15 @@
   }
   
   .screen-header-button.close {
-    background: #ed1c6f;
+    background: #d73020;
   }
   
   .screen-header-button.maximize {
-    background: #e8e925;
+    background: #c0c10d;
   }
   
   .screen-header-button.minimize {
-    background: #74c54f;
+    background: #3fad0d;
   }
   
   .screen-header-right {
@@ -121,7 +121,7 @@
     bottom: -10px;
     width: 25px;
     height: 4px;
-    background: #4426eb;
+    background: #83aac7;
   }
   
   .app-contact {
@@ -167,14 +167,14 @@
   .app-form-button {
     background: none;
     border: none;
-    color: #4426eb;
+    color: #83aac7;
     font-size: 14px;
     cursor: pointer;
     outline: none;  
   }
   
   .app-form-button:hover {
-    color: #3017bd;
+    color: #5790bc;
   }
 
   

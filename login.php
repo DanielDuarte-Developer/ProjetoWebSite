@@ -11,6 +11,7 @@
 
 			<div class="signup">
 				<form method="post">
+					<input type="hidden" name="action" value="signup">
 					<label for="chk" aria-hidden="true">Sign up</label>
 					<input type="text" name="name" placeholder="Name" required="">
 					<input type="email" name="email" placeholder="Email" required="">
@@ -21,6 +22,7 @@
 
 			<div class="login">
 				<form method="post">
+					<input type="hidden" name="action" value="login">
 					<label for="chk" aria-hidden="true">Login</label>
 					<input type="email" name="email" placeholder="Email" required="">
 					<input type="password" name="pswd" placeholder="Password" required="">
@@ -33,12 +35,14 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         include 'model/acessoBaseDados.php';
+		$action = $_POST["action"];
         $emailInserted = $_POST['email'];
         $passwordInserted = $_POST['pswd'];
        
-        if($_POST['btnLogin']){
+        if($action == "login"){
             $user = verifyUser($emailInserted ,$passwordInserted);
         }else{
+			Echo "Entrei Register";
 			$name = $_POST['name'];
 			registerNewUser($emailInserted , $name, $passwordInserted);
 		}
