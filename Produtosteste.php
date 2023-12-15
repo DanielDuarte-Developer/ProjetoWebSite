@@ -33,9 +33,9 @@
 <body>
 <header>
     <div id="nav-bar">
-  <input id="nav-toggle" type="checkbox"/>
+  
   <div id="nav-header"><a id="nav-title" href="https://codepen.io" target="_blank"><i class="fab fa-codepen"></i>Nome Empresa</a>
-    <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+    
     <hr/>
   </div>
   <div id="nav-content">
@@ -113,6 +113,10 @@
     </main>
 
     <footer>
+
+    </footer>
+</body>
+</html>
 
     </footer>
 </body>
