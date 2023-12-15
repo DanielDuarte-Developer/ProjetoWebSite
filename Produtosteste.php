@@ -26,8 +26,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/homePageteste.css">
-    <link rel="stylesheet" href="css/productsCSS.css">
+    <link rel="stylesheet" href="css/menuCSS.css">
     <title>Produtos</title>
 </head>
 <body>
