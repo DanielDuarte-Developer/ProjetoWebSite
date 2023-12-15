@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
         $productsMenu = [
             'prod01' => ['name' => 'camisa', 'value' => 100],
             'prod02' => ['name' => 'calça', 'value' => 200],
@@ -48,8 +48,26 @@
     </header>
 
     <main>
+        <?php
+            include "model/acessoBaseDados.php";
+            $produtos = getProdutos();
+
+            echo " <section class='row'>";
+            foreach($produtos as $produto){
+                echo "<div class = 'card'>
+                        <img src='{$produto['url']}' alt=' ' style='width:100%'>
+                        <h1><a href='Produto.php?id={$produto['Id_Produto']}&linkText=Click%20me'>{$produto['nome']}</a></h1>
+                        <p class='price'>{$produto['preco']} €</p>
+                        <p>{$produto['descricao_curta']}</p>
+                        <p><button>Add to Cart</button></p>
+                    </div>
+                ";
+            }
+            echo "</section>";
+        ?>
+        <!--
         <section class="row">
-            <!--Single Product-->
+           
                 <div class="card">
                     <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
                     <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
@@ -58,7 +76,6 @@
                     <p><button>Add to Cart</button></p>
                 </div>
 
-                <!--Single Product-->
                 <div class="card">
                     <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
                     <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
@@ -67,7 +84,6 @@
                     <p><button>Add to Cart</button></p>
                 </div>
 
-                <!--Single Product-->
                 <div class="card">
                     <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
                     <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
@@ -76,7 +92,6 @@
                     <p><button>Add to Cart</button></p>
                 </div>
 
-                <!--Single Product-->
                 <div class="card">
                     <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
                     <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
@@ -85,7 +100,6 @@
                     <p><button>Add to Cart</button></p>
                 </div>
 
-                <!--Single Product-->
                 <div class="card">
                     <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
                     <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
@@ -94,6 +108,7 @@
                     <p><button>Add to Cart</button></p>
                 </div>
         </section>
+        -->
     </main>
 
     <footer>
