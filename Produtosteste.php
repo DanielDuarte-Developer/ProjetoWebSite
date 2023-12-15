@@ -117,7 +117,3 @@
     </footer>
 </body>
 </html>
-
-    </footer>
-</body>
-</html>
