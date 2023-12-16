@@ -328,6 +328,15 @@ select {
     opacity: 1;
 }
 
+.nome-conta {
+    margin-top: 561px; /* Coloque o item no final ajustando a ordem conforme necessário */
+    border-top: 1px solid hsl(var(--black));
+  }
+.account-image {
+    width: 30px; /* Substitua pelo tamanho desejado */
+    height: auto;
+    margin-right: 10px; /* Ajuste conforme necessário para separação do texto */
+}
 /* ======
     Main
    ====== */

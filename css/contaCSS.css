@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+  }
+  
+  /*Square Encomendas logic */
+.rounded-square-encomendas{
+    width: 94vw; /* Tamanho personalizado */
+    height: 25vw; /* Tamanho personalizado */
+    background-color: #c9c6c6;
+    border: 1px solid hsl(var(--background-secondary));  /* Cor preta */
+    border-radius: 20px; /* Raio dos cantos arredondados */
+    margin: 10px;
+    margin-left: 95px; /* Adicione margem para evitar conflitos com a borda da janela do navegador */
+    display: flex; /* Permite centralizar o texto verticalmente */
+    flex-direction: column;
+   /* Ajuste conforme necessário */
+    /*justify-content: center;*/ /* Centraliza o texto horizontalmente */
+    /*align-items: center;*/ /* Centraliza o texto verticalmente */
+}
+.rounded-square-encomendas p {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    text-align: center; /* Alinhamento do texto */
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    text-align: center;
+  }
+  .rounded-square-encomendas h2 {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-top: 0; /* Remova a margem superior padrão do h1 */
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 25px;
+  }
+
+
+  /*Square Metedos Pagamento logic */
+  .rounded-square-metedospagamento{
+    width: 46.8vw; /* Tamanho personalizado */
+    height: 25vw; /* Tamanho personalizado */
+    background-color: #c9c6c6;
+    border: 1px solid hsl(var(--background-secondary)); /* Cor preta */
+    border-radius: 20px; /* Raio dos cantos arredondados */
+    margin: 3px;
+    margin-left: 95px; /* Adicione margem para evitar conflitos com a borda da janela do navegador */
+    display: flex; /* Permite centralizar o texto verticalmente */
+    flex-direction: column;
+    
+}
+.rounded-square-metedospagamento p {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    text-align: center; /* Alinhamento do texto */
+    margin: 0; /* Remove a margem padrão do parágrafo */
+  }
+  .rounded-square-metedospagamento h2 {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    text-align: left;
+    padding: 25px;
+  }
+
+
+/*Square Endereço logic */
+  .rounded-square-endereco{
+    width: 46.8vw; /* Tamanho personalizado */
+    height: 25vw; /* Tamanho personalizado */
+    background-color: #c9c6c6;
+    border: 1px solid hsl(var(--background-secondary)); /* Cor preta */
+    border-radius: 20px; /* Raio dos cantos arredondados */
+    margin: 3px;
+    margin-left: 10px; /* Adicione margem para evitar conflitos com a borda da janela do navegador */
+    display: flex; /* Permite centralizar o texto verticalmente */
+    flex-direction: column;
+   
+}
+.rounded-square-endereco p {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    text-align: center; /* Alinhamento do texto */
+    margin: 0; /* Remove a margem padrão do parágrafo */
+  }
+  .rounded-square-endereco h2 {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    text-align: left;
+    padding: 25px;
+  }
+

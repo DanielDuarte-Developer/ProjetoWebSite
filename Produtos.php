@@ -32,14 +32,13 @@
 <body>
     <header>
         <?php
-            include "View/Menu.html";
+            include "View/Menu.php";
         ?>
     </header>
 
     <main>
         <?php
            
-            include "model/acessoBaseDados.php";
             $produtos = getProdutos();
 
             echo " <div class='container'>";

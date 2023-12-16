@@ -1,4 +1,6 @@
-
+<?php
+include "model/acessoBaseDados.php"
+?>
 <link rel="stylesheet" href="css/menuCSS.css">
 <nav id="navbar">
      <ul class="navbar-items flexbox-col">
@@ -52,6 +54,14 @@
            <span class="link-text">Contacts</span>
          </a>
        </li>
+       <li class="navbar-item flexbox-left nome-conta" >
+        <a class="navbar-item-inner flexbox-left" href="Conta.php">
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <img src="Resources/Default.png" alt="Nome da Conta" class="account-image">
+          </div>
+          <span class="link-text"><?php echo $_SESSION['username'];?></span>
+        </a>
+      </li>
        <!--
        <li class="navbar-item flexbox-left" href="">
          <a class="navbar-item-inner flexbox-left">
