@@ -1,10 +1,11 @@
 <?php
 include "model/acessoBaseDados.php";
 $email = $_SESSION['email'];
+
 $nome =  getNameByEmail($email);
 $apelido = getApelidoByEmail($email);
 ?>
-<link rel="stylesheet" href="css/menuCSS.css">
+<link rel="stylesheet" href="css/accountMenuCSS.css">
 <nav id="navbar">
      <ul class="navbar-items flexbox-col">
        <li class="navbar-logo flexbox-left">
@@ -15,48 +16,24 @@ $apelido = getApelidoByEmail($email);
            </svg>
          </a>
        </li>
-       <!--
-       <li class="navbar-item flexbox-left">
-         <a class="navbar-item-inner flexbox-left" href="">
-           <div class="navbar-item-inner-icon-wrapper flexbox">
-             <ion-icon name="search-outline"></ion-icon>
-           </div>
-           <span class="link-text">Search</span>
-         </a>
-       </li>
-       -->
+
        <li class="navbar-item flexbox-left" >
-         <a class="navbar-item-inner flexbox-left" href="HomePage.php">
+         <a class="navbar-item-inner flexbox-left" href="DadosPessoais.php">
            <div class="navbar-item-inner-icon-wrapper flexbox">
              <ion-icon name="home-outline"></ion-icon>
            </div>
-           <span class="link-text">Home</span>
+           <span class="link-text">Dados Pessoais</span>
          </a>
        </li>
        <li class="navbar-item flexbox-left" >
-         <a class="navbar-item-inner flexbox-left" href="Produtos.php">
+         <a class="navbar-item-inner flexbox-left" href="Encomendas.php">
            <div class="navbar-item-inner-icon-wrapper flexbox">
              <ion-icon name="folder-open-outline"></ion-icon>
            </div>
-           <span class="link-text">Products</span>
+           <span class="link-text">As Minhas Encomendas</span>
          </a>
        </li>
-       <li class="navbar-item flexbox-left" >
-         <a class="navbar-item-inner flexbox-left" href="AboutUs.html">
-           <div class="navbar-item-inner-icon-wrapper flexbox">
-             <ion-icon name="pie-chart-outline"></ion-icon>
-           </div>
-           <span class="link-text">About Us</span>
-         </a>
-       </li>
-       <li class="navbar-item flexbox-left" >
-         <a class="navbar-item-inner flexbox-left" href="Contact.html">
-           <div class="navbar-item-inner-icon-wrapper flexbox">
-             <ion-icon name="people-outline"></ion-icon>
-           </div>
-           <span class="link-text">Contacts</span>
-         </a>
-       </li>
+       
        <li class="navbar-item flexbox-left nome-conta" >
         <a class="navbar-item-inner flexbox-left" href="DadosPessoais.php">
           <div class="navbar-item-inner-icon-wrapper flexbox">

@@ -42,9 +42,15 @@
         if($action == "login"){
             $user = verifyUser($emailInserted ,$passwordInserted);
         }else{
-			Echo "Entrei Register";
-			$name = $_POST['name'];
-			registerNewUser($emailInserted , $name, $passwordInserted);
+			$nomeCompleto = $_POST['name'];
+    		// Divide a string em um array usando o espaço como delimitador
+    		$partes = explode(" ", $nomeCompleto);
+    
+    		// Atribui os valores do array às variáveis
+    		$nome = $partes[0];
+    		$apelido = $partes[1];
+
+			registerNewUser($emailInserted , $nome, $apelido , $passwordInserted);
 		}
     }
 ?>
