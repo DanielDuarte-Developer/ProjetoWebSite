@@ -40,7 +40,18 @@
         alterarDataNascimento($data_nascimento, $email);
 
       }elseif(isset($_POST['buttonNovaPassword'])){
-        //TODO fazer a logica da mudar a password
+        $passwordAtual = getPasswordByEmail($email);
+        $passwordPost = $_POST['passactual'];
+        $passwordPostNova = $_POST['novapass'];
+        $passwordPostConfi = $_POST['confinovapass'];
+
+        if($passwordAtual == $passwordPost){
+          if($passwordPostNova == $passwordPostConfi){
+            alterarPassword($passwordPostNova, $email);
+          }
+        }else{
+          echo "<p>Password Errada</p>";
+        }
       }
     }
     ?>
@@ -88,7 +99,7 @@
       </div>
         <div class="rounded-square">
           <h2>Alterar Password</h2>
-            <form class="profile-form">
+            <form class="profile-form" method="post">
                 <div class="left-side-alterarpassword">
                   <div class="form-group">
                       <label for="passactual">Password actual</label>
