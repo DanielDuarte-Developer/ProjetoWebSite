@@ -19,59 +19,82 @@
               <?php 
                 //$encomendas = getEncomendas();
                 echo "
-                      <div class='card p-4 mt-3'>
-                        <div class='first d-flex justify-content-between align-items-center mb-3'>
-                            <div class='info'>
-                                <span class='d-block name'>Thank you, Alex</span>
-                                <span class='order'>Order - 4554645</span>
+                      <div class='order-card'>
+                        <div class='order-header'>
+                            <h2>Detalhes da Encomenda</h2>
+                            <p>Número do Pedido: #123456</p>
+                        </div>
+                        <div class='order-details'>
+                            <div class='product-info'>
+                                <img src='Resources/img.jpg' alt='Product Image'>
+                                <div class='product-text'>
+                                    <h3>Nome do Produto</h3>
+                                    <p>Quantidade: 2</p>
+                                    <p>Preço Unitário: $20.00</p>
+                                </div>
                             </div>
-                            <img src='https://i.imgur.com/NiAVkEw.png' width='40'/>
+                            <div class='total-price'>
+                                <p>Total: $40.00</p>
+                            </div>
                         </div>
-                        <div class='detail'>
-                            <span class='d-block summery'>Your order has been dispatched. We are delivering your order.</span>
-                        </div>
-                        <hr>
-                        <div class='text'>
-                            <span class='d-block new mb-1'>Alex Dorlew</span>
-                        </div>
-                        <span class='d-block address mb-3'>672 Conaway Street Bryantiville Massachusetts 02327</span>
-                        <div class='money d-flex flex-row mt-2 align-items-center'>
-                            <img src='https://i.imgur.com/ppwgjMU.png' width='20'/>
-                            <span class='ml-2'>Cash on Delivery</span>
-                        </div>
-                        <div class='last d-flex align-items-center mt-3'>
-                            <span class='address-line'>CHANGE MY DELIVERY ADDRESS</span>
-                        </div>
+                            <div class='shipping-info'>
+                                <h3>Informações de Envio</h3>
+                                <p>Endereço de Envio: Rua ABC, Cidade XYZ</p>
+                                <p>Status de Entrega: Em Trânsito</p>
+                            </div>
                     </div>
                     
-                    <div class='card p-4 mt-3'>
-                        <div class='first d-flex justify-content-between align-items-center mb-3'>
-                            <div class='info'>
-                                <span class='d-block name'>Thank you, Alex</span>
-                                <span class='order'>Order - 4554645</span>
+                    <div class='order-card'>
+                        <div class='order-header'>
+                            <h2>Detalhes da Encomenda</h2>
+                            <p>Número do Pedido: #123456</p>
+                        </div>
+                        <div class='order-details'>
+                            <div class='product-info'>
+                                <img src='Resources/img.jpg' alt='Product Image'>
+                                <div class='product-text'>
+                                    <h3>Nome do Produto</h3>
+                                    <p>Quantidade: 2</p>
+                                    <p>Preço Unitário: $20.00</p>
+                                </div>
                             </div>
-                            <img src='https://i.imgur.com/NiAVkEw.png' width='40'/>
+                            <div class='total-price'>
+                                <p>Total: $40.00</p>
+                            </div>
                         </div>
-                        <div class='detail'>
-                            <span class='d-block summery'>Your order has been dispatched. We are delivering your order.</span>
+                            <div class='shipping-info'>
+                                <h3>Informações de Envio</h3>
+                                <p>Endereço de Envio: Rua ABC, Cidade XYZ</p>
+                                <p>Status de Entrega: Em Trânsito</p>
+                            </div>
+                    </div>
+                    <div class='order-card'>
+                        <div class='order-header'>
+                            <h2>Detalhes da Encomenda</h2>
+                            <p>Número do Pedido: #123456</p>
                         </div>
-                        <hr>
-                        <div class='text'>
-                            <span class='d-block new mb-1'>Alex Dorlew</span>
+                        <div class='order-details'>
+                            <div class='product-info'>
+                                <img src='Resources/img.jpg' alt='Product Image'>
+                                <div class='product-text'>
+                                    <h3>Nome do Produto</h3>
+                                    <p>Quantidade: 2</p>
+                                    <p>Preço Unitário: $20.00</p>
+                                </div>
+                            </div>
+                            <div class='total-price'>
+                                <p>Total: $40.00</p>
+                            </div>
                         </div>
-                        <span class='d-block address mb-3'>672 Conaway Street Bryantiville Massachusetts 02327</span>
-                        <div class='money d-flex flex-row mt-2 align-items-center'>
-                            <img src='https://i.imgur.com/ppwgjMU.png' width='20'/>
-                            <span class='ml-2'>Cash on Delivery</span>
-                        </div>
-                        <div class='last d-flex align-items-center mt-3'>
-                            <span class='address-line'>CHANGE MY DELIVERY ADDRESS</span>
-                        </div>
+                            <div class='shipping-info'>
+                                <h3>Informações de Envio</h3>
+                                <p>Endereço de Envio: Rua ABC, Cidade XYZ</p>
+                                <p>Status de Entrega: Em Trânsito</p>
+                            </div>
                     </div>";
-                
-
               ?>
-            </div>
+              
+                
       </div>
  </main>
 </body>

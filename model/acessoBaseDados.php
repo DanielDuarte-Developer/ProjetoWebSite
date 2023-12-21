@@ -249,14 +249,12 @@
         }
     }
 
-    function inserirMorada($nome, $apelido, $morada, $codigoPostal, $cidade, $numTelefone, $nif, $personEmail ){
+    function inserirMorada($morada, $codigoPostal, $cidade, $numTelefone, $nif, $personEmail ){
         global $liga;
         try {
-            $stmt = $liga->prepare("INSERT INTO dadosmoradautilizador Values (null , :nome, :apelido, :morada ,:codigo_Postal, :cidade, :num_Telefone, :nif, :person_email, null)");
+            $stmt = $liga->prepare("INSERT INTO dadosmoradautilizador Values (null , :morada ,:codigo_Postal, :cidade, :num_Telefone, :nif, :person_email)");
     
                 // Bind dos parâmetros
-            $stmt->bindParam(':nome', $nome);
-            $stmt->bindParam(':apelido', $apelido);
             $stmt->bindParam(':morada', $morada);
             $stmt->bindParam(':codigo_Postal', $codigoPostal);
             $stmt->bindParam(':cidade', $cidade);

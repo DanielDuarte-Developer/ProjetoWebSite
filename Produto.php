@@ -11,7 +11,12 @@
     <main>
         <?php
         include "model/acessoBaseDados.php";
-            $user = $_SESSION['username'];
+            $email = $_SESSION['email'];
+            $nome = getNameByEmail($email);
+            $apelido = getApelidoByEmail($email);
+
+            $nomeCompleto = $nome . ' ' .$apelido;
+            
             if(isset($_GET['id'])  && is_numeric($_GET['id'])){
                 $produtoId = $_GET['id'];
                 $produto = getProdutoById($produtoId);
@@ -48,11 +53,11 @@
                     </div>
                     <div class='reviews'>
                     <form id='doReview' method='post'>";
-                         verifyReviewWithoutReview($user, $produtoId);
+                         verifyReviewWithoutReview($nomeCompleto, $produtoId);
                            foreach($reviews as $review):
                            
                                     if($review['produto_id'] == $produtoId){
-                                        verifyReviewWithReview($user, $produtoId , $review['nome_utilizador'], $review['comentario']);
+                                        verifyReviewWithReview($nomeCompleto, $produtoId , $review['nome_utilizador'], $review['comentario']);
 
                                         $reviewsUsers [] = array(  
                                              'username' => $review['nome_utilizador'],
@@ -77,10 +82,10 @@
                     echo "Produto nao encontrado";
                 }
 
-                if(isset($_POST['submitReview']) && isset($_POST['textArea']) && verifyReview($user, $produtoId) == false){  
+                if(isset($_POST['submitReview']) && isset($_POST['textArea']) && verifyReview($nomeCompleto, $produtoId) == false){  
                     $comentario = $_POST['textArea'];
                     $rating = $_POST['stars'];
-                    createReview($user, $comentario, $rating, $produtoId );
+                    createReview($nomeCompleto, $comentario, $rating, $produtoId );
                     header("Location: {$_SERVER['REQUEST_URI']}");
                     exit();
                 }
@@ -89,8 +94,8 @@
                 echo "<p>ID do produto inválido.</p>";
             }
 
-            function verifyReviewWithoutReview($user,$produto_id){
-                if(verifyReview($user,$produto_id) == false){
+            function verifyReviewWithoutReview($nomeCompleto,$produto_id){
+                if(verifyReview($nomeCompleto,$produto_id) == false){
                     echo "<label>Comentario sobre o produto</label> <br>
                         <textarea type='text' name='textArea' ></textarea><br> 
 
@@ -104,8 +109,8 @@
                     echo"<h3>Reviews</h3>";
                 }
             }
-            function verifyReviewWithReview($user, $produto_id, $commentUsername, $comment){
-                if(verifyReview($user,$produto_id) == true && $commentUsername == $user){
+            function verifyReviewWithReview($nomeCompleto, $produto_id, $commentUsername, $comment){
+                if(verifyReview($nomeCompleto,$produto_id) == true && $commentUsername == $nomeCompleto){
                     echo "<label>O seu comentário a este produto</label>
                     <textarea type='text' name='textArea' disabled >$comment</textarea> 
 

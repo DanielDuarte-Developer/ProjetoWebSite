@@ -196,6 +196,7 @@ select {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
 }
 .flexbox-col-left {
     display: flex;
@@ -329,7 +330,7 @@ select {
 }
 
 .nome-conta {
-    margin-top: 561px; /* Coloque o item no final ajustando a ordem conforme necessário */
+    margin-top: auto; /* Coloque o item no final ajustando a ordem conforme necessário */
     border-top: 1px solid hsl(var(--black));
   }
 .account-image {

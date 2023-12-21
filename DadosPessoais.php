@@ -158,9 +158,6 @@
                        <button class='button-add' type='submit ' name='buttonAdd'>Adicionar nova morada</button>";
                        
               }
-
-              
-              
             ?>
             </form>
           </div>

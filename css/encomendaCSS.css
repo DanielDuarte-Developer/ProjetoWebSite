@@ -1,7 +1,7 @@
   /*Square Encomendas logic */
 .rounded-square-encomendas{
     width: 94vw; /* Tamanho personalizado */
-    height: 25vw; /* Tamanho personalizado */
+    height: auto; /* Tamanho personalizado */
     background-color: #c9c6c6;
     border: 1px solid hsl(var(--background-secondary));  /* Cor preta */
     border-radius: 20px; /* Raio dos cantos arredondados */
@@ -22,76 +22,67 @@
     padding: 25px;
 }
 
+
+
 .container {
   display: flex;
   justify-content: space-evenly;
 }
-  
-.card {
-  background-color: #ffffff;
-  width: 300px;
-  height: auto;
-  border: none;
-  border-radius: 16px;
-  padding: 11px;
 
+.order-card {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.info{
-  line-height: 19px;
+.order-header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.name{
-color: #4c40e0;
-font-size: 18px;
-font-weight: 600;
+.order-header h2 {
+  color: #333;
+  font-size: 20px;
 }
 
-.order{
-  font-size: 14px;
-  font-weight: 400;
-  color: #b7b5b5;
+.order-details {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-.detail{
-line-height:19px;
+.product-info {
+  display: flex;
 }
 
-.summery{
-  color: #d2cfcf;
-font-weight: 400;
-font-size: 13px;
+.product-info img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
 }
 
-.text{
-line-height:15px;
+.product-text h3 {
+  margin: 0;
+  color: #333;
+  font-size: 17px;
 }
 
-.new{
-color: #000;
-font-size: 14px;
-font-weight: 600;
+.total-price p {
+  margin: 0;
+  color: #333;
 }
 
-.money{
-font-size: 14px;
-font-weight:500;
+.shipping-info {
+  margin-top: 20px;
 }
 
-.address{
-color: #d2cfcf;
-font-weight:500;
-font-size:14px;
-}
-
-.last{
-font-size: 10px;
-font-weight: 500;
-
-}
-
-.address-line{
-color: #4C40E0;
-font-size: 11px;
-font-weight: 700;
+.shipping-info h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 20px;
 }

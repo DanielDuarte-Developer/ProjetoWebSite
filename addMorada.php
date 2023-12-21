@@ -38,22 +38,18 @@
             <label for="nif">Nif:</label>
             <input type="text" name="nif"  maxlength="9" placeholder="Insira um nif válido" required>
 
-            <!-- Adicione outros campos conforme necessário -->
-
             <button type="submit">Adicionar Morada</button>
         </form>
 
         <?php
             if($_SERVER['REQUEST_METHOD'] === 'POST'){
-                $nome = $_POST['nome'];
-                $apelido = $_POST['apelido'];
                 $morada = $_POST['morada'];
                 $codigoPostal = $_POST['codigoPostal'];
                 $cidade = $_POST['cidade'];
                 $telefone = $_POST['telefone'];
                 $nif = $_POST['nif'];
 
-                inserirMorada($nome, $apelido, $morada, $codigoPostal, $cidade, $telefone, $nif, $email);
+                inserirMorada($morada, $codigoPostal, $cidade, $telefone, $nif, $email);
                 
                 header("Location: DadosPessoais.php");
                 exit();

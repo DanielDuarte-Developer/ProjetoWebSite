@@ -42,6 +42,15 @@ $apelido = getApelidoByEmail($email);
           <span class="link-text"><?php echo $nome ." ". $apelido;?></span>
         </a>
       </li>
+
+      <li class="navbar-item flexbox-left" >
+         <a class="navbar-item-inner flexbox-left" href="logout.php">
+           <div class="navbar-item-inner-icon-wrapper flexbox">
+             <ion-icon name="home-outline"></ion-icon>
+           </div>
+           <span class="link-text">Logout</span>
+         </a>
+       </li>
        <!--
        <li class="navbar-item flexbox-left" href="">
          <a class="navbar-item-inner flexbox-left">
