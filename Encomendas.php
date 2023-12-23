@@ -17,81 +17,35 @@
           <h2>Encomendas</h2>
             <div class = "container">
               <?php 
-                //$encomendas = getEncomendas();
-                echo "
-                      <div class='order-card'>
-                        <div class='order-header'>
-                            <h2>Detalhes da Encomenda</h2>
-                            <p>Número do Pedido: #123456</p>
-                        </div>
-                        <div class='order-details'>
-                            <div class='product-info'>
-                                <img src='Resources/img.jpg' alt='Product Image'>
-                                <div class='product-text'>
-                                    <h3>Nome do Produto</h3>
-                                    <p>Quantidade: 2</p>
-                                    <p>Preço Unitário: $20.00</p>
-                                </div>
-                            </div>
-                            <div class='total-price'>
-                                <p>Total: $40.00</p>
-                            </div>
-                        </div>
-                            <div class='shipping-info'>
-                                <h3>Informações de Envio</h3>
-                                <p>Endereço de Envio: Rua ABC, Cidade XYZ</p>
-                                <p>Status de Entrega: Em Trânsito</p>
-                            </div>
-                    </div>
-                    
+                $encomendas = getEncomendas();
+                foreach($encomendas as $encomenda){
+                    //TODO Ver a imagem e quantidade que tem de ter na base de dados o carrinho criado
+                    echo "
                     <div class='order-card'>
-                        <div class='order-header'>
-                            <h2>Detalhes da Encomenda</h2>
-                            <p>Número do Pedido: #123456</p>
-                        </div>
-                        <div class='order-details'>
-                            <div class='product-info'>
-                                <img src='Resources/img.jpg' alt='Product Image'>
-                                <div class='product-text'>
-                                    <h3>Nome do Produto</h3>
-                                    <p>Quantidade: 2</p>
-                                    <p>Preço Unitário: $20.00</p>
-                                </div>
-                            </div>
-                            <div class='total-price'>
-                                <p>Total: $40.00</p>
-                            </div>
-                        </div>
-                            <div class='shipping-info'>
-                                <h3>Informações de Envio</h3>
-                                <p>Endereço de Envio: Rua ABC, Cidade XYZ</p>
-                                <p>Status de Entrega: Em Trânsito</p>
-                            </div>
-                    </div>
-                    <div class='order-card'>
-                        <div class='order-header'>
-                            <h2>Detalhes da Encomenda</h2>
-                            <p>Número do Pedido: #123456</p>
-                        </div>
-                        <div class='order-details'>
-                            <div class='product-info'>
-                                <img src='Resources/img.jpg' alt='Product Image'>
-                                <div class='product-text'>
-                                    <h3>Nome do Produto</h3>
-                                    <p>Quantidade: 2</p>
-                                    <p>Preço Unitário: $20.00</p>
-                                </div>
-                            </div>
-                            <div class='total-price'>
-                                <p>Total: $40.00</p>
-                            </div>
-                        </div>
-                            <div class='shipping-info'>
-                                <h3>Informações de Envio</h3>
-                                <p>Endereço de Envio: Rua ABC, Cidade XYZ</p>
-                                <p>Status de Entrega: Em Trânsito</p>
-                            </div>
-                    </div>";
+                      <div class='order-header'>
+                          <h2>Detalhes da Encomenda</h2>
+                          <p>Número do Pedido: #{$encomenda['num_Pedido']}</p>
+                      </div>
+                      <div class='order-details'>
+                          <div class='product-info'>
+                              <img src='Resources/img.jpg' alt='Product Image'>
+                              <div class='product-text'>
+                                  <h3>{$encomenda['nome']}</h3>
+                                  <p>Quantidade: 2 Ver</p>
+                                  <p>Preço Unitário: {$encomenda['preco']}€</p>
+                              </div>
+                          </div>
+                          <div class='total-price'>
+                              <p>Total: $40.00</p>
+                          </div>
+                      </div>
+                          <div class='shipping-info'>
+                              <h3>Informações de Envio</h3>
+                              <p>Endereço de Envio: {$encomenda['morada']}, {$encomenda['cidade']} {$encomenda['codigo_Postal']}</p>
+                              <p>Status de Entrega: Em Trânsito</p>
+                          </div>
+                  </div>";
+                }
               ?>
               
                 

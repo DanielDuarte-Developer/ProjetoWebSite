@@ -190,7 +190,9 @@
     function getEncomendas(){
         global $liga;
         try {
-			$stmt = $liga->query("Select * from encomendas");
+			$stmt = $liga->query("Select encomendas.num_Pedido, produtos.nome, produtos.preco, dadosmoradautilizador.morada, dadosmoradautilizador.codigo_Postal, dadosmoradautilizador.cidade
+             from encomendas inner join produtos on (encomendas.produto_id = produtos.Id_Produto)
+            inner join dadosmoradautilizador on (encomendas.dados_id = dadosmoradautilizador.id_dados)");
 			$encomendas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 			return $encomendas;
