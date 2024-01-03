@@ -28,7 +28,7 @@
                       </div>
                       <div class='order-details'>
                           <div class='product-info'>
-                              <img src='Resources/img.jpg' alt='Product Image'>
+                              <img src='{$encomenda['url']}' alt='Product Image'>
                               <div class='product-text'>
                                   <h3>{$encomenda['nome']}</h3>
                                   <p>Quantidade: 2 Ver</p>
@@ -47,8 +47,6 @@
                   </div>";
                 }
               ?>
-              
-                
       </div>
  </main>
 </body>
