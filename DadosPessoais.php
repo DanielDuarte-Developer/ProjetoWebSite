@@ -128,6 +128,7 @@
               if(verifyExistingDataPerson($email) == true){
                 $utilizadoresmorada = getDadosMoradaUtilizador();
                 foreach( $utilizadoresmorada as $utilizadoresmorada){
+                  if ($utilizadoresmorada['person_email']==$email){
                   echo "<div class='moradasandfaturacao-square'>
                           <div class= 'NomeApelido-div'>
                             <p>".$nome.' '.$apelido."</p>
@@ -147,10 +148,16 @@
                           <div class='div-button-remove'>
                             <button class='button-remove' type='submit' name='buttonRemove'>Remover morada</button>
                           </div>
+                          <div class='div-button-escolher'>
+                            <button class='button-escolha' type='submit' name='buttonEscolha'>Escolher esta morada</button>
+                          </div>
                     </div>
                     <button class='button-add' type='submit' name='buttonAdd'>Adicionar nova morada</button>";
 
-                    
+                    if(isset($_POST['buttonEscolha'])){
+                      $_SESSION['moradaEscolhida'] = $utilizadoresmorada['id_dados'];
+                    }
+                  } 
                 }
               }else{
                 echo " <div class='moradasandfaturacao-square'>
@@ -158,6 +165,8 @@
                        <button class='button-add' type='submit ' name='buttonAdd'>Adicionar nova morada</button>";
                        
               }
+
+
             ?>
             </form>
           </div>

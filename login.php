@@ -42,15 +42,22 @@
         if($action == "login"){
             $user = verifyUser($emailInserted ,$passwordInserted);
         }else{
+			
 			$nomeCompleto = $_POST['name'];
-    		// Divide a string em um array usando o espaço como delimitador
-    		$partes = explode(" ", $nomeCompleto);
+			
+			if(str_contains($nomeCompleto, ' ')){
+				// Divide a string em um array usando o espaço como delimitador
+				$partes = explode(" ", $nomeCompleto);
     
-    		// Atribui os valores do array às variáveis
-    		$nome = $partes[0];
-    		$apelido = $partes[1];
-
-			registerNewUser($emailInserted , $nome, $apelido , $passwordInserted);
-		}
+				// Atribui os valores do array às variáveis
+				$nome = $partes[0];
+				$apelido = $partes[1];
+	
+				registerNewUser($emailInserted , $nome, $apelido , $passwordInserted);
+	
+			}else{
+				echo "Introduza Nome e apelido espaçados";
+			}
+    	}
     }
 ?>
