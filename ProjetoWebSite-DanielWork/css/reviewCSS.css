@@ -1,0 +1,57 @@
+.reviews {
+    margin-top: 20px;
+}
+
+.reviews textarea{ 
+        width: 100%;
+        height: 75px; 
+        font-size: 16px;
+}
+
+.reviews button{
+    position: relative;
+    display: inline-block;
+    background: #3e3e3f;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 0.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transform: translateZ(0);
+    transition: color 0.3s ease;
+    letter-spacing: 0.0625rem;
+}
+
+.rating {
+    font-size: 18px;
+    color: #FFD700; /* Cor amarela para o rating *//* Tamanho das estrelas */
+}
+
+.review {
+    border: 1px solid #e3dddd;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.review p {
+    margin: 5px 0;
+}
+
+.review strong {
+    color: #333;
+}
+
+.add-to-cart {
+    margin-top: 20px;
+    /* Adicione outros estilos conforme necessário */
+}
+.review .name {
+    font-weight: bold; /* Torna o nome em negrito */
+    color: #333; /* Escolhe uma cor para o nome */
+}
+
+.review .content {
+    margin-top: 5px;
+    margin-left: 13px;
+}

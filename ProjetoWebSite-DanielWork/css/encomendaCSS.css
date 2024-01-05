@@ -1,0 +1,88 @@
+  /*Square Encomendas logic */
+.rounded-square-encomendas{
+    width: 94vw; /* Tamanho personalizado */
+    height: auto; /* Tamanho personalizado */
+    background-color: #c9c6c6;
+    border: 1px solid hsl(var(--background-secondary));  /* Cor preta */
+    border-radius: 20px; /* Raio dos cantos arredondados */
+    margin: 10px;
+    margin-left: 95px; /* Adicione margem para evitar conflitos com a borda da janela do navegador */
+    display: flex; /* Permite centralizar o texto verticalmente */
+    flex-direction: column;
+   /* Ajuste conforme necessário */
+    /*justify-content: center;*/ /* Centraliza o texto horizontalmente */
+    /*align-items: center;*/ /* Centraliza o texto verticalmente */
+}
+.rounded-square-encomendas h2{
+  color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-top: 0; /* Remova a margem superior padrão do h1 */
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 25px;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.order-card {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.order-header h2 {
+  color: #333;
+  font-size: 20px;
+}
+
+.order-details {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.product-info {
+  display: flex;
+}
+
+.product-info img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.product-text h3 {
+  margin: 0;
+  color: #333;
+  font-size: 17px;
+}
+
+.total-price p {
+  margin: 0;
+  color: #333;
+}
+
+.shipping-info {
+  margin-top: 20px;
+}
+
+.shipping-info h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 20px;
+}

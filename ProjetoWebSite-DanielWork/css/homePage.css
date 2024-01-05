@@ -1,0 +1,81 @@
+header{
+    background-color: lightgray;
+}
+fieldset {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 350px;
+}
+
+.logo{
+    height: 89px;
+    width: 218px;
+    margin-left: -8px;
+    margin-top: -11px;
+    margin-bottom: -11px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+    padding:7px;
+}
+
+.menuItems {
+    list-style: none;
+    display: flex;
+}
+
+.Menu li, ul{
+    position: relative;
+    margin: 0 20px;     
+    padding: 14px;
+    font-size: 17px;
+}
+
+.Menu a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        border-bottom: 1px transparent;
+    }
+
+    color: #000000;
+    font-family: Robot Condensed;
+    font-size: 19px;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+        content: attr(data-item);
+        transition: 0.5s;
+        color: #4112c3 ;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0;
+        overflow: hidden;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+/*Footer Css*/
+footer {
+    margin-top: 30px;
+    background-color: grey;
+    padding: 25px;
+}
