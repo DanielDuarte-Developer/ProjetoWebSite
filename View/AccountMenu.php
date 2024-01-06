@@ -33,7 +33,16 @@ $apelido = getApelidoByEmail($email);
            <span class="link-text">As Minhas Encomendas</span>
          </a>
        </li>
-       
+
+       <li class="navbar-item flexbox-left" >
+         <a class="navbar-item-inner flexbox-left" href="HomePage.php">
+           <div class="navbar-item-inner-icon-wrapper flexbox">
+             <ion-icon name="home-outline"></ion-icon>
+           </div>
+           <span class="link-text">Return Home Page</span>
+         </a>
+       </li>
+
        <li class="navbar-item flexbox-left nome-conta" >
         <a class="navbar-item-inner flexbox-left" href="DadosPessoais.php">
           <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -45,9 +54,9 @@ $apelido = getApelidoByEmail($email);
 
       <li class="navbar-item flexbox-left" >
          <a class="navbar-item-inner flexbox-left" href="logout.php">
-           <div class="navbar-item-inner-icon-wrapper flexbox">
-             <ion-icon name="home-outline"></ion-icon>
-           </div>
+          <div class="navbar-item-inner-icon-wrapper flexbox">
+            <img src="Resources/logout.png" class="account-image">
+          </div>
            <span class="link-text">Logout</span>
          </a>
        </li>

@@ -3,6 +3,7 @@ main {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
   }
 
   .container {
@@ -27,6 +28,13 @@ main {
     box-sizing: border-box;
   }
 
+  .cart a img{
+    height: 65px;
+    margin-top: 20px;
+    margin-right: 30px;
+    width: 65px
+  }
+x
   .card:hover {
     transform: translateY(-5px);
   }

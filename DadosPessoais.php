@@ -165,6 +165,8 @@
             ?>
             </form>
             <?php 
+            /*
+            TODO Por ver
             function logicEscolha(){
               if(isset($_POST['buttonEscolha'])){
                 $_SESSION['moradaEscolhida'] = $utilizadoresmorada['id_dados'];
@@ -173,6 +175,7 @@
                  echo "<button class='button-escolha' type='submit' name='buttonEscolha'>Escolher esta morada</button>";
               }
             }
+            */
             ?>
           </div>
         </div>

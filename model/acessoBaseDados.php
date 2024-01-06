@@ -144,16 +144,17 @@
 		}
     }
 
-    function createReview($user, $comentario, $rating, $produtoId ){
+    function createReview($user, $comentario, $rating, $produtoId, $email ){
         global $liga;
         try {
-            $stmt = $liga->prepare("INSERT INTO reviews Values (null , :user, :comentario, :rating ,:produto_id)");
+            $stmt = $liga->prepare("INSERT INTO reviews Values (null , :user, :comentario, :rating ,:produto_id, :email)");
     
                 // Bind dos parâmetros
             $stmt->bindParam(':user', $user);
             $stmt->bindParam(':comentario', $comentario);
             $stmt->bindParam(':rating', $rating);
             $stmt->bindParam(':produto_id', $produtoId);
+            $stmt->bindParam(':email', $email);
                 
             // Executar a consulta
             $stmt->execute();
@@ -164,14 +165,14 @@
     }
 
 
-    function verifyReview($username,$produto_id) 
+    function verifyReview($email,$produto_id) 
 	{
 		global $liga;
 		try {
-            $stmt = $liga->prepare("SELECT * FROM reviews Where nome_utilizador = :username AND produto_id = :produto_id");
+            $stmt = $liga->prepare("SELECT * FROM reviews Where person_email = :email AND produto_id = :produto_id");
 
             // Bind dos parâmetros
-            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':email', $email);
             $stmt->bindParam(':produto_id', $produto_id);
         
             // Executar a consulta

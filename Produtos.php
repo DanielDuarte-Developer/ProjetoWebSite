@@ -37,6 +37,7 @@
     </header>
 
     <main>
+      
         <?php
            
             $produtos = getProdutos();
@@ -59,6 +60,9 @@
 
            
         ?>
+        <div class= 'cart'>
+         <a href='Carrinho.php'><img src='Resources/cart256.png'></a>
+        </div>
     </main>
 
     <footer>

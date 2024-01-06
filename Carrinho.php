@@ -10,6 +10,15 @@
     ?>
 </head>
 <body>
+    <?php
+        //Numeric Updown Logic
+        $quantidade = isset($_POST["quantidade"]) ? $_POST["quantidade"]: 1;
+        if (isset($_POST["mais"]) ) {
+            $quantidade++;
+        } elseif (isset($_POST["menos"]) && $quantidade > 1) {
+            $quantidade--;
+        }
+    ?>
 <div class="card">
             <div class="row-all">
                 <div class="col-md-8 cart">
@@ -27,7 +36,9 @@
                                 <div class="row">Cotton T-shirt</div>
                             </div>
                             <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+                                <form method="post" class="form-NumericUpDown">
+                                    <input type="number" value= "1" min="1" >
+                                </form>
                             </div>
                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
                         </div>
@@ -40,7 +51,9 @@
                                 <div class="row">Cotton T-shirt</div>
                             </div>
                             <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+                                <form method="post" class="form-NumericUpDown">
+                                   <input type="number" value= "1" min="1" >
+                                </form>
                             </div>
                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
                         </div>
@@ -53,12 +66,14 @@
                                 <div class="row">Cotton T-shirt</div>
                             </div>
                             <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+                                <form method="post" class="form-NumericUpDown">
+                                    <input type="number" value= "1" min="1" >
+                                </form>
                             </div>
                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
                         </div>
                     </div>
-                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+                    <div class="back-to-shop"><a href="Produtos.php">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
                 </div>
                 <div class="col-md-4 summary">
                     <div><h5><b>Summary</b></h5></div>
