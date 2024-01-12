@@ -42,7 +42,7 @@ $apelido = getApelidoByEmail($email);
          </a>
        </li>
        <li class="navbar-item flexbox-left" >
-         <a class="navbar-item-inner flexbox-left" href="AboutUs.html">
+         <a class="navbar-item-inner flexbox-left" href="AboutUs.php">
            <div class="navbar-item-inner-icon-wrapper flexbox">
              <ion-icon name="pie-chart-outline"></ion-icon>
            </div>
@@ -50,7 +50,7 @@ $apelido = getApelidoByEmail($email);
          </a>
        </li>
        <li class="navbar-item flexbox-left" >
-         <a class="navbar-item-inner flexbox-left" href="Contact.html">
+         <a class="navbar-item-inner flexbox-left" href="Contact.php">
            <div class="navbar-item-inner-icon-wrapper flexbox">
              <ion-icon name="people-outline"></ion-icon>
            </div>

@@ -32,8 +32,7 @@
                 header("location: HomePage.php");
                 exit();
             }else{
-                echo "<br>Utilizador ou password incorretas <br>
-                    ou Utilizador pode nao existir";
+                echo "<script> alert('Utilizador ou password incorretas  ou Utilizador pode nao existir');</script>";
             }
         
 		} catch (PDOException $e) {
@@ -98,9 +97,7 @@
             // Executar a consulta
             $stmt->execute();
         
-            echo "Utilizador Criado com sucesso <br>
-             Para voltar ao login clique abaixo";
-            echo "<a href='login.php'> Login </a>";
+            echo "<script>alert('Utilizador Criado com sucesso');</script>";
 		} catch (PDOException $e) {
 			echo 'Erro na consulta: ' . $e->getMessage();
 		}

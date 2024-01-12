@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+  <header>
+    <?php 
+    include 'View/Menu.php' 
+    ?>
+  </header>
     <main>
         <div class="background">
             <div class="container"> 

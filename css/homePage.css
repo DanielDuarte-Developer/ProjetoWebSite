@@ -1,81 +1,59 @@
-header{
-    background-color: lightgray;
-}
-fieldset {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    width: 350px;
+main {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.logo{
-    height: 89px;
-    width: 218px;
-    margin-left: -8px;
-    margin-top: -11px;
-    margin-bottom: -11px;
+header {
+  background-color: hsl(var(--background-secondary-dark));
+  color: #fff;
+  text-align: center;
+  height: 81.39px;
 }
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    overflow: auto;
-    padding:7px;
+header h1 {
+  margin: 0;
+  font-size: 60px;
 }
 
-.menuItems {
-    list-style: none;
-    display: flex;
+
+.welcome-message {
+  text-align: center;
+  padding: 20px;
 }
 
-.Menu li, ul{
-    position: relative;
-    margin: 0 20px;     
-    padding: 14px;
-    font-size: 17px;
+.featured-products {
+  padding: 20px;
+  text-align: center;
 }
 
-.Menu a {
-    text-decoration: none;
-    color: inherit;
-
-    &:hover {
-        border-bottom: 1px transparent;
-    }
-
-    color: #000000;
-    font-family: Robot Condensed;
-    font-size: 19px;
-    font-weight: 400;
-    transition: all 0.5s ease-in-out;
-    position: relative;
-    text-transform: uppercase;
-
-    &::before {
-        content: attr(data-item);
-        transition: 0.5s;
-        color: #4112c3 ;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 0;
-        overflow: hidden;
-    }
-
-    &:hover {
-        &::before {
-            width: 100%;
-            transition: all 0.5s ease-in-out;
-        }
-    }
+.featured-products img{
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  border-radius: 8px 8px 0 0;
 }
-/*Footer Css*/
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
 footer {
-    margin-top: 30px;
-    background-color: grey;
-    padding: 25px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
