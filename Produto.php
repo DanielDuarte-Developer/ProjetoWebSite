@@ -53,11 +53,11 @@
                     </div>
                     <div class='reviews'>
                     <form id='doReview' method='post'>";
-                         verifyReviewWithoutReview($nomeCompleto, $produtoId);
+                         verifyReviewWithoutReview($email, $produtoId);
                            foreach($reviews as $review):
                            
                                     if($review['produto_id'] == $produtoId){
-                                        verifyReviewWithReview($nomeCompleto, $produtoId , $review['nome_utilizador'], $review['comentario']);
+                                        verifyReviewWithReview($email, $produtoId , $review['nome_utilizador'], $review['comentario'], $nomeCompleto);
 
                                         $reviewsUsers [] = array(  
                                              'username' => $review['nome_utilizador'],
@@ -82,10 +82,10 @@
                     echo "Produto nao encontrado";
                 }
 
-                if(isset($_POST['submitReview']) && isset($_POST['textArea']) && verifyReview($nomeCompleto, $produtoId) == false){  
+                if(isset($_POST['submitReview']) && isset($_POST['textArea']) && verifyReview($email, $produtoId) == false){  
                     $comentario = $_POST['textArea'];
                     $rating = $_POST['stars'];
-                    createReview($nomeCompleto, $comentario, $rating, $produtoId );
+                    createReview($nomeCompleto, $comentario, $rating, $produtoId, $email );
                     header("Location: {$_SERVER['REQUEST_URI']}");
                     exit();
                 }
@@ -94,8 +94,8 @@
                 echo "<p>ID do produto inválido.</p>";
             }
 
-            function verifyReviewWithoutReview($nomeCompleto,$produto_id){
-                if(verifyReview($nomeCompleto,$produto_id) == false){
+            function verifyReviewWithoutReview($email,$produto_id){
+                if(verifyReview($email,$produto_id) == false){
                     echo "<label>Comentario sobre o produto</label> <br>
                         <textarea type='text' name='textArea' ></textarea><br> 
 
@@ -109,8 +109,8 @@
                     echo"<h3>Reviews</h3>";
                 }
             }
-            function verifyReviewWithReview($nomeCompleto, $produto_id, $commentUsername, $comment){
-                if(verifyReview($nomeCompleto,$produto_id) == true && $commentUsername == $nomeCompleto){
+            function verifyReviewWithReview($email, $produto_id, $commentUsername, $comment, $nomeCompleto){
+                if(verifyReview($email,$produto_id) == true){
                     echo "<label>O seu comentário a este produto</label>
                     <textarea type='text' name='textArea' disabled >$comment</textarea> 
 

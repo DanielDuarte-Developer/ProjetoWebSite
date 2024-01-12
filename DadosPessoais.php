@@ -147,16 +147,10 @@
                           </div>
                           <div class='div-button-remove'>
                             <button class='button-remove' type='submit' name='buttonRemove'>Remover morada</button>
-                          </div>
-                          <div class='div-button-escolher'>
                             <button class='button-escolha' type='submit' name='buttonEscolha'>Escolher esta morada</button>
                           </div>
                     </div>
                     <button class='button-add' type='submit' name='buttonAdd'>Adicionar nova morada</button>";
-
-                    if(isset($_POST['buttonEscolha'])){
-                      $_SESSION['moradaEscolhida'] = $utilizadoresmorada['id_dados'];
-                    }
                   } 
                 }
               }else{
@@ -166,11 +160,27 @@
                        
               }
 
+              
 
             ?>
             </form>
+            <?php 
+            /*
+            TODO Por ver
+            function logicEscolha(){
+              if(isset($_POST['buttonEscolha'])){
+                $_SESSION['moradaEscolhida'] = $utilizadoresmorada['id_dados'];
+                echo " <button class='button-escolhido' type='button' name='buttonEscolhido'>Morada Escolhida</button>";
+              }else{
+                 echo "<button class='button-escolha' type='submit' name='buttonEscolha'>Escolher esta morada</button>";
+              }
+            }
+            */
+            ?>
           </div>
         </div>
+
+        
  </main>
 </body>
 </html>
