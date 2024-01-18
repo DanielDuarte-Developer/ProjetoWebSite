@@ -11,12 +11,12 @@
         <?php
             include "View/Menu.php";
         ?>
-        <h1>Bem-vindo à Sua Loja Eletrônica</h1>
+        <h1 class="header-title">Bem-vindo à Sua Loja Eletrônica</h1>
     </header>
 
     <main>
         <section class="welcome-message">
-            <p>Explore nossa incrível seleção de produtos eletrônicos. Encontre as últimas novidades e ofertas exclusivas.</p>
+            <p>Explore a nossa incrível seleção de produtos eletrônicos. Encontre as últimas novidades e ofertas exclusivas.</p>
         </section>
 
         <section class="featured-products">
@@ -24,41 +24,53 @@
             <?php
                 $produto1 = getProdutoById(2);
                 $produto2 = getProdutoById(5);
+                $produto3 = getProdutoById(6);
+                echo "<div class='products-structure'>";
                 echo " <div class='product-card'>
                         <img src='{$produto1['url']}' alt='Produto 1'>
-                        <h3>{$produto1['nome']}</h3>
-                        <p>{$produto1['descricao_curta']}</p>
-                        <button>Ver Detalhes</button>
+                        <div class='product-details'>
+                            <h3>{$produto1['nome']}</h3>
+                            <p>{$produto1['descricao_curta']}</p>
+                            <form action='Produto.php' method='get'>
+                                <button type='submit' name='id' value='{$produto1['Id_Produto']}' class='button-detalhes'>Ver Detalhes</button>
+                            </form>
+                        </div>
                     </div>";
+
+                    echo " <div class='product-card'>
+                    <img src='{$produto2['url']}' alt='Produto 1'>
+                    <div class='product-details'>
+                        <h3>{$produto2['nome']}</h3>
+                        <p>{$produto2['descricao_curta']}</p>
+                        <form action='Produto.php' method='get'>
+                            <button type='submit' name='id' value='{$produto2['Id_Produto']}' class='button-detalhes'>Ver Detalhes</button>
+                        </form>
+                    </div>
+                </div>";
+
+                echo " <div class='product-card'>
+                    <img src='{$produto3['url']}' alt='Produto 1'>
+                    <div class='product-details'>
+                        <h3>{$produto3['nome']}</h3>
+                        <p>{$produto3['descricao_curta']}</p>
+                        <form action='Produto.php' method='get'>
+                            <button type='submit' name='id' value='{$produto3['Id_Produto']}' class='button-detalhes'>Ver Detalhes</button>
+                        </form>
+                    </div>
+                </div>";
+                echo "</div>";
+                    /*
                 echo " <div class='product-card'>
                     <img src='{$produto2['url']}' alt='Produto 2'>
                     <h3>{$produto2['nome']}</h3>
                     <p>{$produto2['descricao_curta']}</p>
-                    <button>Ver Detalhes</button>
+                    <form action='Produto.php' method='get'>
+                    <button type='submit' name='id' value='{$produto2['Id_Produto']}' class='button-detalhes'>Ver Detalhes</button>
+                    </form>
                 </div>"
+                */
             ?>
-            <!-- Adicione seus produtos em destaque aqui 
-            <div class="product-card">
-                <img src="produto1.jpg" alt="Produto 1">
-                <h3>Nome do Produto 1</h3>
-                <p>Descrição breve do Produto 1.</p>
-                <button>Ver Detalhes</button>
-            </div>
-
-            <div class="product-card">
-                <img src="produto2.jpg" alt="Produto 2">
-                <h3>Nome do Produto 2</h3>
-                <p>Descrição breve do Produto 2.</p>
-                <button>Ver Detalhes</button>
-            </div>
-            -->
-            <!-- Adicione mais produtos conforme necessário -->
         </section>
-        <!--
-        <footer>
-            <p>&copy; 2024 Sua Loja Eletrônica. Todos os direitos reservados.</p>
-        </footer>   z   
-        -->
     </main>
   
 </body>

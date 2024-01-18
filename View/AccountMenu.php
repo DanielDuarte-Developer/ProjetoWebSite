@@ -30,7 +30,7 @@ $apelido = getApelidoByEmail($email);
            <div class="navbar-item-inner-icon-wrapper flexbox">
              <ion-icon name="folder-open-outline"></ion-icon>
            </div>
-           <span class="link-text">As Minhas Encomendas</span>
+           <span class="link-text">Encomendas</span>
          </a>
        </li>
 

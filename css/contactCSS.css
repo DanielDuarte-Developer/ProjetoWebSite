@@ -5,13 +5,11 @@
   }
   
   body {
-    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-    font-size: 12px;
+    background: #f4f4f4;
   }
   
   body, button, input {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
     letter-spacing: 1.4px;
   }
   

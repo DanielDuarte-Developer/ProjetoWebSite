@@ -17,34 +17,40 @@
         <main>
             <div class="container">
                 <div class="columns-sections">
-                    <section class="about-us">
-                        <h2>About Us</h2>
-                        <p>Welcome to [Company Name], your trusted source for cutting-edge technology and innovation. Established in [foundation year], we are committed to providing exceptional experiences through the most advanced electronic devices available in the market.</p>
-                    </section>
-                    <section class="about-us">
-                        <h2>Our Mission</h2>
-                        <p>At [Company Name], our mission is to connect people to the future by providing easy and affordable access to the latest technology. We believe that innovation transforms lives, and we are dedicated to offering products that elevate how we live, work, and have fun.</p>
-                    </section>
-                    <section class="about-us">
-                        <h2>Commitment to Quality</h2>
-                        <p>We understand the importance of reliable, durable, and efficient electronic devices. Therefore, each product we offer is carefully selected based on the highest quality standards. We collaborate only with leading brands and manufacturers, ensuring that each item in our catalog meets or exceeds our customers' expectations.</p>
-                    </section>
-                    <section class="about-us">
-                        <h2>Variety of Products</h2>
-                        <p>At [Company Name], we offer a wide range of electronic devices, from smartphones and laptops to innovative gadgets and smart accessories. Our goal is to provide a comprehensive shopping experience where you can find everything you need to stay connected and updated with the digital world.</p>
-                    </section>
-                    <section class="about-us">
-                        <h2>Exceptional Customer Service</h2>
-                        <p>Our commitment to customer satisfaction goes beyond the sale. Our dedicated support team is always ready to assist, providing technical support, answering questions, and ensuring that each customer has a positive experience when dealing with us.</p>
-                    </section>
-                    <section class="about-us">
-                        <h2>Continuous Innovation</h2>
-                        <p>We live in an era of rapid and constant technological advancements. At [Company Name], we embrace change and continually update our inventory to include the latest and most exciting devices on the market. We believe that innovation is the path to the future, and we want to be your partner on this journey.</p>
-                    </section>
+                <section class="about-us">
+                    <h2>Sobre Nós</h2>
+                    <p>Bem-vindo à [Nome da Empresa], a sua fonte confiável para tecnologia de ponta e inovação. Fundada em [ano de fundação], estamos comprometidos em proporcionar experiências excepcionais por meio dos dispositivos eletrónicos mais avançados disponíveis no mercado.</p>
+                </section>
+
+                <section class="about-us">
+                    <h2>A Nossa Missão</h2>
+                    <p>No [Nome da Empresa], a nossa missão é conectar as pessoas ao futuro, fornecendo acesso fácil e acessível à tecnologia mais recente. Acreditamos que a inovação transforma vidas, e estamos dedicados a oferecer produtos que elevam a forma como vivemos, trabalhamos e nos divertimos.</p>
+                </section>
+
+                <section class="about-us">
+                    <h2>Compromisso com a Qualidade</h2>
+                    <p>Compreendemos a importância de dispositivos eletrónicos fiáveis, duráveis e eficientes. Portanto, cada produto que oferecemos é cuidadosamente selecionado com base nos mais altos padrões de qualidade. Colaboramos apenas com marcas e fabricantes líderes, garantindo que cada item no nosso catálogo atenda ou exceda as expectativas dos nossos clientes.</p>
+                </section>
+
+                <section class="about-us">
+                    <h2>Variedade de Produtos</h2>
+                    <p>No [Nome da Empresa], oferecemos uma ampla gama de dispositivos eletrónicos, desde smartphones e computadores portáteis até gadgets inovadores e acessórios inteligentes. O nosso objetivo é proporcionar uma experiência de compra abrangente, onde pode encontrar tudo o que precisa para se manter conectado e atualizado com o mundo digital.</p>
+                </section>
+
+                <section class="about-us">
+                    <h2>Serviço de Atendimento ao Cliente Excecional</h2>
+                    <p>O nosso compromisso com a satisfação do cliente vai além da venda. A nossa equipa de suporte dedicada está sempre pronta para ajudar, fornecendo suporte técnico, respondendo a perguntas e garantindo que cada cliente tenha uma experiência positiva ao lidar connosco.</p>
+                </section>
+
+                <section class="about-us">
+                    <h2>Inovação Contínua</h2>
+                    <p>Vivemos numa era de avanços tecnológicos rápidos e constantes. No [Nome da Empresa], abraçamos a mudança e atualizamos continuamente o nosso inventário para incluir os dispositivos mais recentes e emocionantes no mercado. Acreditamos que a inovação é o caminho para o futuro, e queremos ser o seu parceiro nesta jornada.</p>
+                </section>
+
                 </div>
 
                 <section class="team">
-                    <h2>Our Team</h2>
+                    <h2>A Nossa Equipa</h2>
                     <div class="team-member">
                         <img src="Resources/Default.png" alt="Team Member 1">
                         <h3>Daniel Duarte</h3>

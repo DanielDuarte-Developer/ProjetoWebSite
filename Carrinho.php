@@ -10,15 +10,6 @@
     ?>
 </head>
 <body>
-    <?php
-        //Numeric Updown Logic
-        $quantidade = isset($_POST["quantidade"]) ? $_POST["quantidade"]: 1;
-        if (isset($_POST["mais"]) ) {
-            $quantidade++;
-        } elseif (isset($_POST["menos"]) && $quantidade > 1) {
-            $quantidade--;
-        }
-    ?>
 <div class="card">
             <div class="row-all">
                 <div class="col-md-8 cart">
