@@ -79,4 +79,22 @@
        $total = calcularTotal();
        echo "Total do Carrinho: $total";
    }
+   function obterQuantidadeNoCarrinho($produtoId) {
+        // Certifique-se de que você tenha inicializado a variável $carrinho
+        if (!isset($_SESSION['carrinho'])) {
+            $_SESSION['carrinho'] = array();
+        }
+
+        // Recupera o carrinho da sessão
+        $carrinho = $_SESSION['carrinho'];
+
+        // Verifica se o produto existe no carrinho
+        if (isset($carrinho[$produtoId])) {
+            // Retorna a quantidade do produto no carrinho
+            return $carrinho[$produtoId]['quantidade'];
+        }
+
+        // Se o produto não existir no carrinho, retorna 0
+        return 0;
+    }
 ?>

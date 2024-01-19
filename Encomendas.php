@@ -14,38 +14,38 @@
   <main>
     <!-- Single Encomenda -->
       <div class="rounded-square-encomendas">
-          <h2>Encomendas</h2>
+          <h2>Encomenda</h2>
             <div class = "container">
               <?php 
-                $encomendas = getEncomendas();
-                foreach($encomendas as $encomenda){
-                    //TODO Ver a imagem e quantidade que tem de ter na base de dados o carrinho criado
+                $encomendasProdutos = getEncomendasProdutos();
+                foreach($encomendasProdutos as $encomendaProduto){
                     echo "
                     <div class='order-card'>
                       <div class='order-header'>
                           <h2>Detalhes da Encomenda</h2>
-                          <p>Número do Pedido: #{$encomenda['num_Pedido']}</p>
+                          <p>Número do Pedido: #{$encomendaProduto['IdEncomenda']}</p>
                       </div>
                       <div class='order-details'>
                           <div class='product-info'>
-                              <img src='{$encomenda['url']}' alt='Product Image'>
+                              <img src='{$encomendaProduto['url']}' alt='Product Image'>
                               <div class='product-text'>
-                                  <h3>{$encomenda['nome']}</h3>
-                                  <p>Quantidade: 2 Ver</p>
-                                  <p>Preço Unitário: {$encomenda['preco']}€</p>
+                                  <h3>{$encomendaProduto['nome']}</h3>
+                                  <p>Quantidade: {$encomendaProduto['Quantidade']}</p>
+                                  <p>Preço Unitário: {$encomendaProduto['preco']}€</p>
                               </div>
                           </div>
                           <div class='total-price'>
-                              <p>Total: $40.00</p>
+                              <p>Total: {$encomendaProduto['Quantidade']}</p>
                           </div>
                       </div>
                           <div class='shipping-info'>
                               <h3>Informações de Envio</h3>
-                              <p>Endereço de Envio: {$encomenda['morada']}, {$encomenda['cidade']} {$encomenda['codigo_Postal']}</p>
+                              <p>Endereço de Envio: {$encomendaProduto['morada']}, {$encomendaProduto['cidade']} {$encomendaProduto['codigo_Postal']}</p>
                               <p>Status de Entrega: Em Trânsito</p>
                           </div>
                   </div>";
-                }
+       
+                  }
               ?>
       </div>
  </main>

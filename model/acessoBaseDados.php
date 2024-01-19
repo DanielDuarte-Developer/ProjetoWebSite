@@ -185,12 +185,13 @@
 		}
 	}
 
-    function getEncomendas(){
+    function getEncomendasProdutos(){
         global $liga;
         try {
-			$stmt = $liga->query("Select encomendas.num_Pedido, produtos.nome ,produtos.url, produtos.preco, dadosmoradautilizador.morada, dadosmoradautilizador.codigo_Postal, dadosmoradautilizador.cidade
-             from encomendas inner join produtos on (encomendas.produto_id = produtos.Id_Produto)
-            inner join dadosmoradautilizador on (encomendas.dados_id = dadosmoradautilizador.id_dados)");
+			$stmt = $liga->query("Select * from encomendasprodutos ep inner join produtos p on (ep.produtoId = p.Id_Produto)
+            inner join encomendas e on (ep.EncomendaId = e.IdEncomenda)
+            inner join dadosmoradautilizador da on (e.dados_id = da.id_dados)
+            inner join dadospagamento dp on (e.dadosPagamento_id = dp.id_dadosPagamento)");
 			$encomendas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 			return $encomendas;
@@ -199,6 +200,43 @@
 		}
     }
 
+    function fazerEncomenda($numEncomenda, $morada_id, $dadosPagamento_id, $personEmail, $total ){
+        global $liga;
+        try {
+            $stmt = $liga->prepare("INSERT INTO encomendas Values (:numEncomenda ,:moradaId, :dadosPagamentoId, :person_email, :total)");
+    
+            // Bind dos parâmetros
+            $stmt->bindParam(':numEncomenda', $numEncomenda);
+            $stmt->bindParam(':moradaId', $morada_id);
+            $stmt->bindParam(':dadosPagamentoId', $dadosPagamento_id);
+            $stmt->bindParam(':person_email', $personEmail);
+            $stmt->bindParam(':total', $total);
+                
+            // Executar a consulta
+            $stmt->execute();
+            
+        } catch (PDOException $e) {
+             echo 'Erro na consulta: ' . $e->getMessage();
+         }
+    }
+
+    function associarEncomendasEProdutos($numEncomenda, $produtoId, $quantidade){
+        global $liga;
+        try {
+            $stmt = $liga->prepare("INSERT INTO encomendasprodutos Values (:numEncomenda , :produtoId, :quantidade)");
+    
+            // Bind dos parâmetros
+            $stmt->bindParam(':numEncomenda', $numEncomenda);
+            $stmt->bindParam(':produtoId', $produtoId);
+            $stmt->bindParam(':quantidade', $quantidade);
+                
+            // Executar a consulta
+            $stmt->execute();
+            
+        } catch (PDOException $e) {
+             echo 'Erro na consulta: ' . $e->getMessage();
+         }
+    }
     function verifyExistingDataPerson($email){
         global $liga;
 		try {

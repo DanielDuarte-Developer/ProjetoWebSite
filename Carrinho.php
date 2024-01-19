@@ -49,55 +49,6 @@
                         exit();
                     }
                     ?>
-
-                   
-                    <!--
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/1GrakTl.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <form method="post" class="form-NumericUpDown">
-                                    <input type="number" value= "1" min="1" >
-                                </form>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/ba3tvGm.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <form method="post" class="form-NumericUpDown">
-                                   <input type="number" value= "1" min="1" >
-                                </form>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/pHQ3xT3.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <form method="post" class="form-NumericUpDown">
-                                    <input type="number" value= "1" min="1" >
-                                </form>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    -->
                     <div class="back-to-shop"><a href="Produtos.php">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
                 </div>
                
@@ -121,8 +72,9 @@
                         <div class="col">TOTAL PRICE</div>
                         <div class="col text-right"><?php echo calcularTotal() + 5 ?> &euro;</div>
                     </div>
-
-                    <button class="btn">CHECKOUT</button>
+                    <form method="post" action="Checkout.php">
+                        <button class="btn">CHECKOUT</button>
+                    </form>
                 </div>
             </div>
             
