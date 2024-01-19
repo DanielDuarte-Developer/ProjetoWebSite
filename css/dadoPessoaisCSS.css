@@ -1,0 +1,178 @@
+ /*Square logic */
+.rounded-square{
+    width: 94vw; /* Tamanho personalizado */
+    height: auto; /* Tamanho personalizado */
+    background-color: #c9c6c6;
+    border: 1px solid hsl(var(--background-secondary));  /* Cor preta */
+    border-radius: 20px; /* Raio dos cantos arredondados */
+    margin: 10px;
+    margin-left: 95px; /* Adicione margem para evitar conflitos com a borda da janela do navegador */
+    display: flex; /* Permite centralizar o texto verticalmente */
+    flex-direction: column;
+    padding: 20px;
+}
+.rounded-square p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: left;
+  }
+  .rounded-square p strong {
+    font-weight: bold;
+    color: #0066cc; /* Cor opcional para texto em negrito */
+  }
+  
+  .rounded-square p em {
+    font-style: italic;
+    color: #990000; /* Cor opcional para texto em itálico */
+  }
+  .rounded-square h2 {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-top: 0; /* Remova a margem superior padrão do h1 */
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .rounded-square-pagamento{
+    width: 94vw; /* Tamanho personalizado */
+    height: auto; /* Tamanho personalizado */
+    background-color: #c9c6c6;
+    border: 1px solid hsl(var(--background-secondary));  /* Cor preta */
+    border-radius: 20px; /* Raio dos cantos arredondados */
+    margin: 10px;
+    display: flex; /* Permite centralizar o texto verticalmente */
+    flex-direction: column;
+    padding: 20px;
+}
+.rounded-square-pagamento p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: left;
+  }
+  .rounded-square-pagamento p strong {
+    font-weight: bold;
+    color: #0066cc; /* Cor opcional para texto em negrito */
+  }
+  
+  .rounded-square-pagamento p em {
+    font-style: italic;
+    color: #990000; /* Cor opcional para texto em itálico */
+  }
+  .rounded-square-pagamento h2 {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-top: 0; /* Remova a margem superior padrão do h1 */
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .moradas-pagamento{
+    display: flex;
+  }
+
+  .rounded-square div .profile-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-text {
+    width: 45vw;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+}
+
+.button-Atualizar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/*Dados da conta Logic*/
+.left-side-dadosconta{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.right-side-dadosconta{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*Square Metedos Pagamento logic */
+.left-side-alterarpassword{
+  display: flex;
+  justify-content: left;
+  margin-left: 7px;
+}
+  
+.right-side-alterarpassword{
+  display: flex;
+  justify-content: space-evenly;
+}
+  
+/*Square Endereço logic */
+.moradasandfaturacao-square{
+  width: 20vw; /* Tamanho personalizado */
+  height: auto; /* Tamanho personalizado */
+  background-color: #c9c6c6;
+  border: 1px solid hsl(var(--background-secondary));  /* Cor preta */
+  border-radius: 20px; /* Raio dos cantos arredondados */
+  margin: 10px;
+  display: flex; /* Permite centralizar o texto verticalmente */
+  flex-direction: column;
+  padding: 20px;
+}
+.button-add{
+  padding: .8em 1.2em;
+  border: 1px solid hsl(var(--black));
+  background-color: hsl(var(--background));
+  cursor: pointer;
+  outline: none;
+}
+.div-button-remove{
+  display: flex;
+  justify-content: right;
+}
+.button-remove{
+  width: 120px;
+}
+
+.button-add:focus {
+    box-shadow:
+            0 0 0 2px hsl(var(--black)),
+            0 0 0 3px hsl(var(--white));
+    border: 1px solid transparent;
+}
+
+
+

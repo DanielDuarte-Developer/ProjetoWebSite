@@ -1,99 +1,66 @@
-<?php
-    session_start();
-        $productsMenu = [
-            'prod01' => ['name' => 'camisa', 'value' => 100],
-            'prod02' => ['name' => 'calça', 'value' => 200],
-            'prod03' => ['name' => 'boné', 'value' => 50],
-        ];
-        $cart = [];
-        function addProductToCart($product, $amount) {
-            global $cart;
-                
-            for ($i = 0; $i < $amount; $i++) {
-                $cart[] = $product;
-            }
-        }
-            
-        function getCartTotal($userCart) {
-            return array_reduce($userCart, function ($acc, $next) {
-                return $acc + $next['value'];
-            }, 0);
-        }
-            
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/homePage.css">
-    <link rel="stylesheet" href="css/productsCSS.css">
+    <!--<link rel="stylesheet" href="css/homePage.css">-->
+    <link rel="stylesheet" href="css/produtosCSS.css">
     <title>Produtos</title>
 </head>
 <body>
     <header>
-        <div class="Menu">
-            <nav>
-                <!--TODO Meter Src Para um logo-->
-                <!--<img src="" class="logo">-->
-                <ul class="menuItems">
-                    <!--TODO Mudar o Menu-->
-                    <li><a href='HomePage.php' data-item='Homepage'> Home </a></li>
-                    <li><a href='' data-item='About-us'> About us </a></li>
-                    <li><a href='Produtos.php' data-item='Products'> Products </a></li>
-                    <li><a href='' data-item='Contact'> Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <?php
+            include "View/Menu.php";
+        ?>
     </header>
 
     <main>
-        <section class="row">
-            <!--Single Product-->
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
+      
+        <?php
+           include "model/carrinho.php";
+            $produtos = getProdutos();
 
-                <!--Single Product-->
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
+            echo " <div class='container'>";
+            foreach($produtos as $produto){
+                echo "<div class = 'card'>
+                        <form method='post'>
+                            <img src='{$produto['url']}' alt=' ' style='width:100%' name='urlProduto'>
+                            <div class='card-content'>
+                                <h2><a href='Produto.php?id={$produto['Id_Produto']}&linkText=Click%20me' name='nameProduto'>{$produto['nome']}</a></h2>
+                                <p class='price' name='preco'>{$produto['preco']} €</p>
+                                <p class='description' name='descricao'>{$produto['descricao_curta']}</p>
+                                <input type='hidden' name='produtoId' value='{$produto['Id_Produto']}'>
+                                <button class='add-to-cart' name='AddCart'>Add to Cart</button>
+                            </div>
+                        </form>
+                    </div>
+                ";
+            }
+            
+            echo "</div>";
+            
+           if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['AddCart'])){
+                $produtoId = $_POST['produtoId'];
 
-                <!--Single Product-->
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
+                $produto = getProdutoById($produtoId);
+                $quantidade = 1;
 
-                <!--Single Product-->
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
-
-                <!--Single Product-->
-                <div class="card">
-                    <img src="resources/img.jpg" alt="Denim Jeans" style="width:100%">
-                    <h1><a href="anotherPage.php?linkText=Click%20me">Tailored Jeans</a></h1>
-                    <p class="price">$19.99</p>
-                    <p>Some text about the jeans..</p>
-                    <p><button>Add to Cart</button></p>
-                </div>
-        </section>
+                if ($produto) {
+                    $nomeProdutoCarrinho = $produto['nome'];
+                    $urlProdutoCarrinho = $produto['url'];
+                    $precoCarrinho = $produto['preco'];
+                    $quantidadeCarrinho = 1;
+    
+                    // Adicionar ao carrinho
+                    adicionarAoCarrinho($produtoId, $nomeProdutoCarrinho, $precoCarrinho, $quantidadeCarrinho, $urlProdutoCarrinho);
+                } else {
+                    echo "Produto não encontrado para adicionar ao carrinho.";
+                }
+           }
+        ?>
+        <div class= 'cart'>
+         <a href='Carrinho.php'><img src='Resources/cart256.png'></a>
+        </div>
     </main>
 
     <footer>

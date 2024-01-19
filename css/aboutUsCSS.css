@@ -1,0 +1,86 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header {
+    background: hsl(var(--background-secondary));
+    color: #fff;
+    padding-top: 2px;
+    min-height: 82.3px;
+    border-bottom: #bbb 1px solid;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.columns-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(414px, 1fr));
+    gap: 20px;
+}
+
+section {
+    box-sizing: border-box;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+}
+
+section.about-us {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+section.about-us h2 {
+    color: #333;
+    font-size: 40px;
+}
+
+section.about-us p {
+    font-size: 16px;
+    line-height: 1.6em;
+}
+
+section.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+section.team h2 {
+    color: #333;
+}
+
+section.team .team-member {
+    margin-bottom: 20px;
+}
+
+.team-member img{
+    width: 200px;
+    height: 200px;
+}
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
