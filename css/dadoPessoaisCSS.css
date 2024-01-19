@@ -34,6 +34,46 @@
     margin-bottom: 10px;
     text-align: left;
   }
+
+  .rounded-square-pagamento{
+    width: 94vw; /* Tamanho personalizado */
+    height: auto; /* Tamanho personalizado */
+    background-color: #c9c6c6;
+    border: 1px solid hsl(var(--background-secondary));  /* Cor preta */
+    border-radius: 20px; /* Raio dos cantos arredondados */
+    margin: 10px;
+    display: flex; /* Permite centralizar o texto verticalmente */
+    flex-direction: column;
+    padding: 20px;
+}
+.rounded-square-pagamento p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: left;
+  }
+  .rounded-square-pagamento p strong {
+    font-weight: bold;
+    color: #0066cc; /* Cor opcional para texto em negrito */
+  }
+  
+  .rounded-square-pagamento p em {
+    font-style: italic;
+    color: #990000; /* Cor opcional para texto em itálico */
+  }
+  .rounded-square-pagamento h2 {
+    color: #000000; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-top: 0; /* Remova a margem superior padrão do h1 */
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .moradas-pagamento{
+    display: flex;
+  }
+
   .rounded-square div .profile-form {
     width: 100%;
     max-width: 400px;
@@ -124,7 +164,7 @@ button:hover {
   justify-content: right;
 }
 .button-remove{
-  width: 68px;
+  width: 120px;
 }
 
 .button-add:focus {

@@ -25,7 +25,7 @@ body{
 }
 .cart{
     background-color: #fff;
-    padding: 4vh 9vh;   
+    padding: 4vh 5vh;   
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
 }
@@ -42,7 +42,7 @@ body{
     border-bottom-right-radius: 1rem;
     padding: 4vh;
     color: rgb(65, 65, 65);
-    margin-right: 50px;
+    margin: auto;
 }
 @media(max-width:767px){
     .summary{
@@ -59,8 +59,35 @@ body{
 }.row{
     margin: 0;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row.main .col-left {
+    display: flex;
+    align-items: center;
 }
 
+.row.main .col-left img {
+    margin-right: 10px; /* Ajuste a margem conforme necessário */
+}
+
+.row.main .col-right {
+    display: flex;
+    align-items: center;
+}
+
+.row.main .form-NumericUpDown {
+    margin-right: 10px; /* Ajuste a margem conforme necessário */
+}
+
+.row.main .col-close-preco {
+    display: flex;
+    align-items: center;
+}
+
+.row.main .col-close-preco button {
+    margin-left: 10px; /* Ajuste a margem conforme necessário */
+}
 .row-all{
     display: flex;
     justify-content: space-between;
@@ -76,11 +103,14 @@ body{
 .col-2, .col{
     padding: 0 1vh;
 }
+.col-close-preco{
+    padding: 0vh;
+}
 a{
     padding: 0 1vh;
 }
 .close{
-    margin-left: auto;
+    margin-left: 4px;
     font-size: 0.7rem;
 }
 img{
@@ -152,7 +182,6 @@ input[type="number"]::-webkit-inner-spin-button:before {
 input{
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
-    margin-bottom: 4vh;
     outline: none;
     width: 100%;
     background-color: rgb(247, 247, 247);

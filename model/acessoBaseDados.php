@@ -345,4 +345,71 @@
             echo "Erro na atualização dos dados: " . $e->getMessage();
         }
     }
+
+    function verifyExistingDataPagamento($email){
+        global $liga;
+		try {
+            $stmt = $liga->prepare("SELECT * FROM dadospagamento Where person_email = :email");
+
+            // Bind dos parâmetros
+            $stmt->bindParam(':email', $email);
+        
+            // Executar a consulta
+            $stmt->execute();
+            if($stmt->rowCount() == 1){
+              return true;
+            }else{
+                return false;
+            }
+        
+		} catch (PDOException $e) {
+			echo 'Erro na consulta: ' . $e->getMessage();
+		}
+    }
+    function getDadosPagamento(){
+        global $liga;
+        try {
+			$stmt = $liga->query("Select * from dadospagamento");
+			$pagamentos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			return $pagamentos;
+		} catch (PDOException $e) {
+			echo "<p>Erro ao executar a consulta: " . $e->getMessage() . "</p>";
+		}
+    }
+    function removeDadosPagamento($email){
+        global $liga; // Suponho que $liga seja a sua instância PDO
+
+        try {
+            // Preparar a consulta para remover o utilizador com base no email
+            $stmt = $liga->prepare("DELETE FROM dadospagamento WHERE person_email = :email");
+    
+            // Bind do parâmetro
+            $stmt->bindParam(':email', $email);
+    
+            // Executar a consulta
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo 'Erro na consulta: ' . $e->getMessage();
+        }
+    }
+
+    function inserirPagamento($cardNumber, $expiryDate, $cvv, $personEmail ){
+        global $liga;
+        try {
+            $stmt = $liga->prepare("INSERT INTO dadospagamento Values (null , :cardNumber ,:expiryDate, :cvv, :person_email)");
+    
+                // Bind dos parâmetros
+            $stmt->bindParam(':cardNumber', $cardNumber);
+            $stmt->bindParam(':expiryDate', $expiryDate);
+            $stmt->bindParam(':cvv', $cvv);
+            $stmt->bindParam(':person_email', $personEmail);
+                
+            // Executar a consulta
+            $stmt->execute();
+            
+        } catch (PDOException $e) {
+             echo 'Erro na consulta: ' . $e->getMessage();
+         }
+    }
 ?>

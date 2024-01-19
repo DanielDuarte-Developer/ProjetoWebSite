@@ -48,7 +48,11 @@
                         <div class='description'>
                         <p>{$produto['descricao_detalhada']}</p>
                         </div>
-                        <button class='add-to-cart'>Add To Cart</button>
+                        <form method='post'>
+                            <input type='hidden' name='produtoId' value='{$produto['Id_Produto']}'>
+                            <button class='add-to-cart' name='AddCart'>Add To Cart</button>
+                        </form>
+                        
                     </div>
                     </div>
                     <div class='reviews'>
@@ -89,78 +93,83 @@
                     header("Location: {$_SERVER['REQUEST_URI']}");
                     exit();
                 }
+
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['AddCart'])) {
+                    AddCarrinho();
+                }
                 
             }else{
                 echo "<p>ID do produto inválido.</p>";
             }
-
-            function verifyReviewWithoutReview($email,$produto_id){
-                if(verifyReview($email,$produto_id) == false){
-                    echo "<label>Comentario sobre o produto</label> <br>
-                        <textarea type='text' name='textArea' ></textarea><br> 
-
-                        <label>Avaliação</label>
-                        <input type='number' name='stars' min='1' max='5'/> <br>
-                        <button type='submit' name='submitReview'>
-                            Fazer Comentário
-                        </button>
-                        </form>";
-
-                    echo"<h3>Reviews</h3>";
-                }
-            }
-            function verifyReviewWithReview($email, $produto_id, $commentUsername, $comment, $nomeCompleto){
-                if(verifyReview($email,$produto_id) == true){
-                    echo "<label>O seu comentário a este produto</label>
-                    <textarea type='text' name='textArea' disabled >$comment</textarea> 
-
-                    </form>";
-    
-                    echo"<h3>Reviews</h3>";
-                }
-            }
-            function ratingStars($rating){
-                switch ($rating){
-                    case 1:
-                        return "<p>Rating: <span class='rating'>&#9733; &#9734; &#9734; &#9734; &#9734;</span></p>";
-                    break;
-                    case 2:
-                        return "<p>Rating: <span class='rating'>&#9733; &#9733; &#9734; &#9734; &#9734;</span></p>";
-                    break;
-                    case 3:
-                        return "<p>Rating: <span class='rating'>&#9733; &#9733; &#9733; &#9734; &#9734;</span></p>";
-                    break;
-                    case 4:
-                        return "<p>Rating: <span class='rating'>&#9733; &#9733; &#9733; &#9733; &#9734;</span></p>";
-                    break;
-                    case 5:
-                        return "<p>Rating: <span class='rating'>&#9733; &#9733; &#9733; &#9733; &#9733;</span></p>";
-                    break;
-                }      
-            }
         ?>
-            <!--
-            <div class="grid related-products">
-            <div class="column-xs-12">
-                <h3>You may also like</h3>
-            </div>
-            <div class="column-xs-12 column-md-4">
-                <img src="https://source.unsplash.com/miziNqvJx5M">
-                <h4>Succulent</h4>
-                <p class="price">$19.99</p>
-            </div>
-            <div class="column-xs-12 column-md-4">
-                <img src="https://source.unsplash.com/2y6s0qKdGZg">
-                <h4>Terranium</h4>
-                <p class="price">$19.99</p>
-            </div>
-            <div class="column-xs-12 column-md-4">
-                <img src="https://source.unsplash.com/6Rs76hNbIWE">
-                <h4>Cactus</h4>
-                <p class="price">$19.99</p>
-            </div>
-            </div>
-        -->
+
+        <?php
+        function AddCarrinho(){
+            $produtoIdCarrinho = $_POST['produtoId'];
+        
+            // Recuperar os detalhes do produto a ser adicionado ao carrinho
+             $produtoCarrinho = getProdutoById($produtoIdCarrinho);
+        
+            // Verificar se o produto é válido antes de adicioná-lo ao carrinho
+            if ($produtoCarrinho) {
+                $nomeProdutoCarrinho = $produtoCarrinho['nome'];
+                $urlProdutoCarrinho = $produtoCarrinho['url'];
+                $precoCarrinho = $produtoCarrinho['preco'];
+                $quantidadeCarrinho = 1;
+        
+                // Adicionar ao carrinho
+                adicionarAoCarrinho($produtoIdCarrinho, $nomeProdutoCarrinho, $precoCarrinho, $quantidadeCarrinho, $urlProdutoCarrinho);
+            } else {
+                 echo "Produto não encontrado para adicionar ao carrinho.";
+            }
+            
+        }
+
+        function verifyReviewWithoutReview($email,$produto_id){
+            if(verifyReview($email,$produto_id) == false){
+                echo "<label>Comentario sobre o produto</label> <br>
+                    <textarea type='text' name='textArea' ></textarea><br> 
+
+                    <label>Avaliação</label>
+                    <input type='number' name='stars' min='1' max='5'/> <br>
+                    <button type='submit' name='submitReview'>
+                        Fazer Comentário
+                    </button>
+                    </form>";
+
+                echo"<h3>Reviews</h3>";
+            }
+        }
+        function verifyReviewWithReview($email, $produto_id, $commentUsername, $comment, $nomeCompleto){
+            if(verifyReview($email,$produto_id) == true){
+                echo "<label>O seu comentário a este produto</label>
+                <textarea type='text' name='textArea' disabled >$comment</textarea> 
+
+                </form>";
+
+                echo"<h3>Reviews</h3>";
+            }
+        }
+        function ratingStars($rating){
+            switch ($rating){
+                case 1:
+                    return "<p>Rating: <span class='rating'>&#9733; &#9734; &#9734; &#9734; &#9734;</span></p>";
+                break;
+                case 2:
+                    return "<p>Rating: <span class='rating'>&#9733; &#9733; &#9734; &#9734; &#9734;</span></p>";
+                break;
+                case 3:
+                    return "<p>Rating: <span class='rating'>&#9733; &#9733; &#9733; &#9734; &#9734;</span></p>";
+                break;
+                case 4:
+                    return "<p>Rating: <span class='rating'>&#9733; &#9733; &#9733; &#9733; &#9734;</span></p>";
+                break;
+                case 5:
+                    return "<p>Rating: <span class='rating'>&#9733; &#9733; &#9733; &#9733; &#9733;</span></p>";
+                break;
+            }      
+        }
+        ?>
     </main>
 
 </body>

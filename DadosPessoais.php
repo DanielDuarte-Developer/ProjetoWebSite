@@ -21,12 +21,19 @@
     }
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-      if(isset($_POST['buttonRemove'])){
+      if(isset($_POST['buttonRemoveMorada'])){
         removeDadosUtilizador($email);
         header("Location: {$_SERVER['REQUEST_URI']}");
         exit();
-      }else if(isset($_POST['buttonAdd'])){
+      }else if(isset($_POST['buttonAddMorada'])){
         header("Location: addMorada.php");
+        exit();
+      }else if(isset($_POST['buttonAddPagamento'])){
+        header("Location: addPagamento.php");
+        exit();
+      }else if(isset($_POST['buttonRemovePagamento'])){
+        removeDadosPagamento($email);
+        header("Location: {$_SERVER['REQUEST_URI']}");
         exit();
       }elseif(isset($_POST['buttonGuardarDados'])){
         $nomePost = $_POST['nome'];
@@ -35,7 +42,6 @@
       
         if($nome != $nomePost || $apelido != $apelidoPost){
           alterarNome($nomePost, $apelidoPost, $email);
-          
         }
         alterarDataNascimento($data_nascimento, $email);
 
@@ -120,65 +126,88 @@
                 <button class="button-Atualizar" name="buttonNovaPassword" type="submit">Guardar</button>
             </form>
         </div>
-        <div class="rounded-square">
-          <h2>Moradas de Entrega e de Faturação</h2>
-          <div>
-          <form method="post">
-            <?php 
-              if(verifyExistingDataPerson($email) == true){
-                $utilizadoresmorada = getDadosMoradaUtilizador();
-                foreach( $utilizadoresmorada as $utilizadoresmorada){
-                  if ($utilizadoresmorada['person_email']==$email){
-                  echo "<div class='moradasandfaturacao-square'>
-                          <div class= 'NomeApelido-div'>
-                            <p>".$nome.' '.$apelido."</p>
-                          </div>
-                          <div class= 'Morada-div'>
-                            <p>".$utilizadoresmorada['morada']."</p>
-                          </div>
-                          <div class= 'CodgioPostalCidade-div'>
-                            <p>".$utilizadoresmorada['codigo_Postal'].", ".  $utilizadoresmorada['cidade']."</p>
-                          </div>
-                          <div class= 'Telefone-div'>
-                            <p>T: ".$utilizadoresmorada['num_Telefone']."</p>
-                          </div>
-                          <div class= 'Nif-div'>
-                            <p>Nif: ".$utilizadoresmorada['nif']."</p>
-                          </div>
-                          <div class='div-button-remove'>
-                            <button class='button-remove' type='submit' name='buttonRemove'>Remover morada</button>
-                            <button class='button-escolha' type='submit' name='buttonEscolha'>Escolher esta morada</button>
-                          </div>
-                    </div>
-                    <button class='button-add' type='submit' name='buttonAdd'>Adicionar nova morada</button>";
-                  } 
+        <div class='moradas-pagamento'>
+          <div class="rounded-square">
+            <h2>Moradas de Entrega e de Faturação</h2>
+            <form method="post">
+              <?php 
+                if(verifyExistingDataPerson($email) == true){
+                  $utilizadoresmorada = getDadosMoradaUtilizador();
+                  foreach( $utilizadoresmorada as $utilizadoresmorada){
+                    if ($utilizadoresmorada['person_email']==$email){
+                    echo "<div class='moradasandfaturacao-square'>
+                            <div class= 'NomeApelido-div'>
+                              <p>".$nome.' '.$apelido."</p>
+                            </div>
+                            <div class= 'Morada-div'>
+                              <p>".$utilizadoresmorada['morada']."</p>
+                            </div>
+                            <div class= 'CodgioPostalCidade-div'>
+                              <p>".$utilizadoresmorada['codigo_Postal'].", ".  $utilizadoresmorada['cidade']."</p>
+                            </div>
+                            <div class= 'Telefone-div'>
+                              <p>T: ".$utilizadoresmorada['num_Telefone']."</p>
+                            </div>
+                            <div class= 'Nif-div'>
+                              <p>Nif: ".$utilizadoresmorada['nif']."</p>
+                            </div>
+                            <div class='div-button-remove'>
+                              <button class='button-remove' type='submit' name='buttonRemoveMorada'>Remover morada</button>
+                            </div>
+                      </div>
+                      <button class='button-add' type='submit' name='buttonAddMorada'>Adicionar nova morada</button>";
+                    } 
+                  }
+                }else{
+                  echo " <div class='moradasandfaturacao-square'>
+                        </div>
+                        <button class='button-add' type='submit ' name='buttonAddMorada'>Adicionar nova morada</button>";
+                        
                 }
-              }else{
-                echo " <div class='moradasandfaturacao-square'>
-                       </div>
-                       <button class='button-add' type='submit ' name='buttonAdd'>Adicionar nova morada</button>";
-                       
-              }
 
-              
+                
 
-            ?>
-            </form>
-            <?php 
-            /*
-            TODO Por ver
-            function logicEscolha(){
-              if(isset($_POST['buttonEscolha'])){
-                $_SESSION['moradaEscolhida'] = $utilizadoresmorada['id_dados'];
-                echo " <button class='button-escolhido' type='button' name='buttonEscolhido'>Morada Escolhida</button>";
-              }else{
-                 echo "<button class='button-escolha' type='submit' name='buttonEscolha'>Escolher esta morada</button>";
-              }
-            }
-            */
-            ?>
+              ?>
+              </form>
           </div>
-        </div>
+            <div class="rounded-square-pagamento">
+            <h2>Dados de Pagamento</h2>
+            <form method="post">
+            <?php 
+                if(verifyExistingDataPagamento($email) == true){
+                  $utilizadoresPagamento = getDadosPagamento();
+                  foreach( $utilizadoresPagamento as $utilizadorePagamento){
+                    if ($utilizadorePagamento['person_email'] == $email){
+                    echo "<div class='moradasandfaturacao-square'>
+                            <div class= 'NomeApelido-div'>
+                              <p>".$nome.' '.$apelido."</p>
+                            </div>
+                            <div class= 'Morada-div'>
+                              <p>CN: ".$utilizadorePagamento['cardNumber']."</p>
+                            </div>
+                            <div class= 'CodgioPostalCidade-div'>
+                              <p>ExpD: ".$utilizadorePagamento['expiryDate']."</p>
+                            </div>
+                            <div class= 'Telefone-div'>
+                              <p>CVV: ".$utilizadorePagamento['cvv']."</p>
+                            </div>
+                            <div class='div-button-remove'>
+                              <button class='button-remove' type='submit' name='buttonRemovePagamento'>Remover forma de pagamento</button>
+                            </div>
+                      </div>
+                      <button class='button-add' type='submit' name='buttonAddPagamento'>Adicionar nova forma de pagamento</button>";
+                    } 
+                  }
+                }else{
+                  echo " <div class='moradasandfaturacao-square'>
+                        </div>
+                        <button class='button-add' type='submit ' name='buttonAddPagamento'>Adicionar nova forma de pagamento</button>";
+                        
+                }
+              ?>
+              </form>
+            </div>
+      </div>
 
         
  </main>
